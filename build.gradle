@@ -1,0 +1,43 @@
+buildscript {
+     repositories {
+         mavenCentral()
+     }
+ }
+
+ allprojects {
+     apply plugin: 'java'
+     apply plugin: 'maven'
+
+     group 'com.paypal'
+     version '1.0.0'
+     sourceCompatibility = 1.8
+     targetCompatibility = 1.8
+
+     repositories {
+         mavenCentral()
+         jcenter()
+     }
+
+     tasks.withType(Javadoc) {
+         options.addStringOption('Xdoclint:none', '-quiet')
+     }
+
+     apply plugin: 'signing'
+
+     def braintreehttpVersion = "1.2.17"
+
+     dependencies {
+         compile "com.braintreepayments:braintreehttp:${braintreehttpVersion}"
+         compile 'org.json:json:20180130'
+         testCompile group: 'org.testng', name: 'testng', version: '6.9.13.6'
+         testCompile "com.github.tomakehurst:wiremock:2.4.1"
+         testCompile "com.braintreepayments:braintreehttp-testutils:${braintreehttpVersion}"
+     }
+
+     test {
+         useTestNG {
+             testLogging.showStandardStreams = true
+             outputs.upToDateWhen { false }
+         }
+     }
+ }
