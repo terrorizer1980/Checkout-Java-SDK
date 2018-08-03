@@ -70,4 +70,4 @@ try {
 ```
 ## Samples
 
-To try out different samples for both create and authorize intent you can head to [this link] (/tree/master/src/test/java/com/paypal/orders)
+To try out different samples for both create and authorize intent you can head to [this link](/tree/master/src/test/java/com/paypal/orders)
