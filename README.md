@@ -71,4 +71,5 @@ try {
 ## Samples
 
 You can start off by trying out [creating and capturing an order](/src/test/java/com/paypal/orders/CaptureIntentExamples/RunAll.java)
+
 To try out different samples for both create and authorize intent head to [this link](/src/test/java/com/paypal/orders)
