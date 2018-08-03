@@ -44,3 +44,27 @@ try {
     // Something went wrong client-side
 }
 ```
+
+
+## Capturing an Order
+
+```java
+// Here, OrdersCaptureRequest() creates a POST request to /v2/checkout/orders
+// order.Id() returns the orderId from the order created above
+OrdersCreateRequest request = new OrdersCaptureRequest(order.Id()).authToken("Bearer " + authToken);
+
+try {
+    // Call API with your client and get a response for your call
+    HttpResponse<Order> response = client().execute(request);  
+    // If call returns body in response, you can get the deserialized version by calling result() on the response
+    Order order = response.result();
+} catch (IOException ioe) {
+    if (ioe instanceof HttpException) {
+      // Something went wrong server-side
+    HttpException he = (HttpException) ioe);
+    int statusCode = he.getStatusCode();
+    String debugId = he.getMessage().get("debug_id");
+} else {
+    // Something went wrong client-side
+}
+```
