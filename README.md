@@ -51,7 +51,7 @@ try {
 ```java
 // Here, OrdersCaptureRequest() creates a POST request to /v2/checkout/orders
 // order.Id() returns the orderId from the order created above
-OrdersCreateRequest request = new OrdersCaptureRequest(order.Id()).authToken("Bearer " + authToken);
+OrdersCaptureRequest request = new OrdersCaptureRequest(order.Id()).authToken("Bearer " + authToken);
 
 try {
     // Call API with your client and get a response for your call
@@ -68,3 +68,6 @@ try {
     // Something went wrong client-side
 }
 ```
+## Samples
+
+To try out different samples for both create and authorize intent you can head to [this link] (/tree/master/src/test/java/com/paypal/orders)
