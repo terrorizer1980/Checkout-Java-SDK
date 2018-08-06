@@ -1,8 +1,6 @@
 package com.paypal.orders.AuthorizeIntentExamples;
 
 import com.braintreepayments.http.HttpResponse;
-import com.braintreepayments.http.serializer.Json;
-import com.paypal.PayPalAuthToken;
 import com.paypal.Skeleton;
 import com.paypal.orders.LinkDescription;
 import com.paypal.orders.Order;

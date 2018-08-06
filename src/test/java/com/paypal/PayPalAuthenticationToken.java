@@ -1,25 +1,16 @@
 package com.paypal;
 
 import org.json.*;
-import org.apache.http.HttpHeaders;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.HttpClientBuilder;
 
-import javax.activation.MimeType;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
-import java.util.Scanner;
 
-public class PayPalAuthToken {
+public class PayPalAuthenticationToken {
     public String createAuthToken(String clientId, String secret){
         String access_token = "";
         try {
@@ -55,7 +46,7 @@ public class PayPalAuthToken {
         return access_token;
     }
     public static void main(String[] args){
-        String data = new PayPalAuthToken().createAuthToken("AVNCVvV9oQ7qee5O8OW4LSngEeU1dI7lJAGCk91E_bjrXF2LXB2TK2ICXQuGtpcYSqs4mz1BMNQWuso1",
+        String data = new PayPalAuthenticationToken().createAuthToken("AVNCVvV9oQ7qee5O8OW4LSngEeU1dI7lJAGCk91E_bjrXF2LXB2TK2ICXQuGtpcYSqs4mz1BMNQWuso1",
                             "EDQzd81k-1z2thZw6typSPOTEjxC_QbJh6IithFQuXdRFc7BjVht5rQapPiTaFt5RC-HCa1ir6mi-H5l");
         System.out.println(data);
     }

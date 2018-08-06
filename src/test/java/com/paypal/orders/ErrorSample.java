@@ -3,36 +3,54 @@ package com.paypal.orders;
 import com.braintreepayments.http.HttpResponse;
 import com.paypal.Skeleton;
 import com.braintreepayments.http.exceptions.HttpException;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.*;
 
+import static org.apache.commons.lang3.text.WordUtils.capitalize;
+
 public class ErrorSample extends Skeleton {
+
+    public String prettyPrint(JSONObject jo, String pre)
+    {
+        Iterator<?> keys = jo.keys();
+        StringBuilder pretty = new StringBuilder();
+        while( keys.hasNext() ) {
+            String key = (String)keys.next();
+            pretty.append(String.format("%s%s: ", pre, capitalize(key)));
+            if (jo.get(key) instanceof JSONObject) {
+                pretty.append(prettyPrint(jo.getJSONObject(key), pre + "\t"));
+            }
+            else if (jo.get(key) instanceof JSONArray){
+                int sno = 1;
+                for ( Object jsonObject: jo.getJSONArray(key)){
+                    pretty.append(String.format("\n%s\t%d:\n", pre, sno++));
+                    pretty.append(prettyPrint((JSONObject) jsonObject, pre + "\t\t"));
+                }
+            }
+            else{
+                pretty.append(String.format("%s\n", jo.getString(key)));
+            }
+        }
+        return pretty.toString();
+    }
+
     /**
      * Body has no required parameters (intent, purchase_units)
      */
     public void createError1() {
         OrdersCreateRequest request = new OrdersCreateRequest().authToken("Bearer " + authenticationToken());
         request.requestBody(new OrderRequest());
-        System.out.println("Request Body: {}");
+        System.out.println("Request Body: {}\n");
         System.out.println("Response:");
         try {
             HttpResponse<Order> response = client().execute(request);
         } catch (IOException e){
             HttpException h = (HttpException) e;
             JSONObject message = new JSONObject(h.getMessage());
-            System.out.println("Status Code: " + h.statusCode());
-            System.out.println("Debug ID: " + message.get("debug_id"));
-            System.out.println("Details:");
-            System.out.println("\tName: " + message.get("name"));
-            System.out.println("\tMessage: " + message.get("message"));
-            System.out.println("\tProblems:");
-            int sno = 1;
-            for (Object detail: message.getJSONArray("details")){
-                JSONObject obj = (JSONObject) detail;
-                System.out.println("\t\t" + sno++ + ". Field: " + obj.getString("field") + "\tIssue: " + obj.getString("issue"));
-            }
+            System.out.println(this.prettyPrint(message, ""));
             System.out.println();
         }
     }
@@ -58,21 +76,20 @@ public class ErrorSample extends Skeleton {
                 "           }\n" +
                 "       }\n" +
                 "   ]\n" +
-                "}");
+                "}\n");
         System.out.println("Response:");
         try {
             HttpResponse<Order> response = client().execute(request);
         } catch (IOException e){
             HttpException h = (HttpException) e;
             JSONObject message = new JSONObject(h.getMessage());
-            System.out.println("Status Code: " + h.statusCode());
-            System.out.println("Details:");
-            System.out.println("\tName: " + message.get("name"));
-            System.out.println("\tMessage: " + message.get("message"));
-            System.out.println();
+            System.out.println(this.prettyPrint(message, ""));
         }
     }
 
+    /**
+     * Body has invalid parameter value for intent
+     */
     public void createError3() {
         OrdersCreateRequest request = new OrdersCreateRequest().authToken("Bearer " + authenticationToken());
         request.requestBody(new OrderRequest()
@@ -91,36 +108,27 @@ public class ErrorSample extends Skeleton {
                 "           }\n" +
                 "       }\n" +
                 "   ]\n" +
-                "}");
+                "}\n");
         System.out.println("Response:");
         try {
             HttpResponse<Order> response = client().execute(request);
         } catch (IOException e){
             HttpException h = (HttpException) e;
             JSONObject message = new JSONObject(h.getMessage());
-            System.out.println("Status Code: " + h.statusCode());
-            System.out.println("Details:");
-            System.out.println("\tName: " + message.get("name"));
-            System.out.println("\tMessage: " + message.get("message"));
-            System.out.println("\tProblems:");
-            int sno = 1;
-            for (Object detail: message.getJSONArray("details")){
-                JSONObject obj = (JSONObject) detail;
-                System.out.println("\t\t" + sno++ + ". Field: " + obj.getString("field") + "\tIssue: " + obj.getString("issue"));
-            }
+            System.out.println(this.prettyPrint(message, ""));
             System.out.println();
         }
     }
     public static void main(String[] args) {
         ErrorSample errorSample = new ErrorSample();
 
-        System.out.println("Calling createError1...");
+        System.out.println("Calling createError1 (Body has no required parameters (intent, purchase_units))");
         errorSample.createError1();
 
-        System.out.println("Calling createError2...");
+        System.out.println("Calling createError2 (Authorization header has an empty string)");
         errorSample.createError2();
 
-        System.out.println("Calling createError3...");
+        System.out.println("Calling createError3 (Body has invalid parameter value for intent)");
         errorSample.createError3();
 
     }
