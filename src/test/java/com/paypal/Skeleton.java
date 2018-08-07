@@ -1,20 +1,14 @@
 package com.paypal;
-import com.braintreepayments.http.Environment;
-import com.braintreepayments.http.HttpClient;
 import com.paypal.core.CheckoutJavaSdkHttpClient;
+import com.paypal.core.CheckoutJavaSdkEnvironment;
 
 
 public class Skeleton {
 
     private CheckoutJavaSdkHttpClient client;
 
-    protected HttpClient client() {
-        Environment environment = new Environment() {
-            @Override
-            public String baseUrl() {
-                return System.getenv("BASE_URL");
-            }
-        };
+    protected CheckoutJavaSdkHttpClient client() {
+        CheckoutJavaSdkEnvironment environment = new CheckoutJavaSdkEnvironment();
 
         return new CheckoutJavaSdkHttpClient(environment);
     }

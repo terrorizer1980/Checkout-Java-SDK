@@ -6,6 +6,6 @@ import java.lang.UnsupportedOperationException;
 public class CheckoutJavaSdkEnvironment implements Environment {
 
 	public String baseUrl() {
-		throw new UnsupportedOperationException("Not implemented");
+		return System.getenv("BASE_URL");
 	}
 }
