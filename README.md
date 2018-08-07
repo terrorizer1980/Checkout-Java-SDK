@@ -1,6 +1,6 @@
 # REST API SDK for Java V2
 
-![Home Image](https://raw.githubusercontent.com/wiki/paypal/PayPal-PHP-SDK/images/homepage.jpg)
+![Home Image](homepage.jpg)
 
 __Welcome to PayPal Java SDK__. This repository contains PayPal's Java SDK and samples for REST API.
 
