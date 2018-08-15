@@ -1,4 +1,4 @@
-package com.paypal;
+package com.paypal.core;
 
 import org.json.*;
 

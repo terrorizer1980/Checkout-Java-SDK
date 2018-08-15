@@ -1,7 +1,7 @@
 package com.paypal.orders.AuthorizeIntentExamples;
 
 import com.braintreepayments.http.HttpResponse;
-import com.paypal.Skeleton;
+import com.paypal.core.Skeleton;
 import com.paypal.orders.*;
 
 import java.io.IOException;

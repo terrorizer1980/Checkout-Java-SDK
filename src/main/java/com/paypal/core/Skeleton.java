@@ -1,6 +1,4 @@
-package com.paypal;
-import com.paypal.core.CheckoutJavaSdkHttpClient;
-import com.paypal.core.CheckoutJavaSdkEnvironment;
+package com.paypal.core;
 
 
 public class Skeleton {

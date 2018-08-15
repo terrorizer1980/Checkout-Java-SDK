@@ -2,6 +2,7 @@ package com.paypal.orders;
 
 import com.braintreepayments.http.HttpResponse;
 import com.paypal.Skeleton;
+import com.paypal.core.Skeleton;
 
 import java.io.IOException;
 

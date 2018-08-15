@@ -1,8 +1,7 @@
 package com.paypal.orders.CaptureIntentExamples;
 
 import com.braintreepayments.http.HttpResponse;
-import com.braintreepayments.http.serializer.Json;
-import com.paypal.Skeleton;
+import com.paypal.core.Skeleton;
 import com.paypal.orders.*;
 
 import java.io.IOException;
