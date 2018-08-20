@@ -1,7 +1,7 @@
 package com.paypal.orders;
 
 import com.braintreepayments.http.HttpResponse;
-import com.paypal.Skeleton;
+import com.paypal.core.Skeleton;
 import com.braintreepayments.http.exceptions.HttpException;
 import com.paypal.core.Skeleton;
 import org.json.JSONArray;
