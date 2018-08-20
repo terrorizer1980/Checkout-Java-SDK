@@ -14,12 +14,9 @@ public class OrdersValidateTest extends Skeleton {
     }
 
     public void testOrdersValidateRequest() throws IOException {
-        OrdersValidateRequest request = new OrdersValidateRequest("OPcOx64Wb5zsdC2T")
-            .payPalClientMetadataId("8Dg1IKHAvNB");
+        OrdersValidateRequest request = new OrdersValidateRequest("ORDER-ID")
+            .payPalClientMetadataId("PayPal Client Metadata ID");
         request.requestBody(buildRequestBody());
-
         HttpResponse<Order> response = client().execute(request);
-
-        // Add your own checks here
     }
 }
