@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.paypal.orders.OrdersPatchTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-08-23T19:21:19" hostname="LM-SJN-21017303" time="1.393">
+<testsuite name="com.paypal.orders.OrdersPatchTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-08-23T21:27:00" hostname="LM-SJN-21017303" time="1.293">
   <properties/>
-  <testcase name="testOrdersPatchRequest" classname="com.paypal.orders.OrdersPatchTest" time="1.393"/>
+  <testcase name="testOrdersPatchRequest" classname="com.paypal.orders.OrdersPatchTest" time="1.293"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

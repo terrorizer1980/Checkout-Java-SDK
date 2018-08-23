@@ -31,7 +31,7 @@ public class Credentials {
     static String secret = "CLIENT-SECRET";
     
     // Creating a sandbox environment
-    static PayPalEnvironment environment = new PayPalEnvironment.Sandbox(clientId, secret);
+    private PayPalEnvironment environment = new PayPalEnvironment.Sandbox(clientId, secret);
     
     // Creating a client for the environment
     static PayPalHttpClient client = new PayPalHttpClient(environment);
@@ -50,7 +50,7 @@ public class CreateOrderExample {
         
         // Construct a request object and set desired parameters
         // Here, OrdersCreateRequest() creates a POST request to /v2/checkout/orders
-        OrdersCreateRequest request = new OrdersCreateRequest().authToken("Bearer " + Credentials.authToken)
+        OrdersCreateRequest request = new OrdersCreateRequest()
                                           .requestBody(new OrderRequest()
                                               .intent("CAPTURE")
                                               .purchaseUnits(new ArrayList<PurchaseUnitRequest> () {{
@@ -64,7 +64,7 @@ public class CreateOrderExample {
         
         try {
             // Call API with your client and get a response for your call
-            HttpResponse<Order> response = client().execute(request);  
+            HttpResponse<Order> response = Credentials.client.execute(request);  
             
             // If call returns body in response, you can get the deserialized version by calling result() on the response
             Order order = response.result();
@@ -94,11 +94,11 @@ public class CaptureOrderExample {
         // Construct a request object and set desired parameters
         // Here, OrdersCaptureRequest() creates a POST request to /v2/checkout/orders
         // Replace ORDER-ID with the order id from create order
-        OrdersCaptureRequest request = new OrdersCaptureRequest("ORDER-ID").authToken("Bearer " + Credentials.authToken);
+        OrdersCaptureRequest request = new OrdersCaptureRequest("ORDER-ID");
         
         try {
             // Call API with your client and get a response for your call
-            HttpResponse<Order> response = client().execute(request);  
+            HttpResponse<Order> response = Credentials.client.execute(request);  
             
             // If call returns body in response, you can get the deserialized version by calling result() on the response
             Order order = response.result();
