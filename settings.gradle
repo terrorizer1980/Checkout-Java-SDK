@@ -1,1 +1,4 @@
-rootProject.name = 'CheckoutJavaSDK'
+rootProject.name = 'CheckoutSDK'
+include 'checkout-sdk'
+include 'checkout-sdk-sample'
+
