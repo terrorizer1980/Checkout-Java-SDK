@@ -117,6 +117,6 @@ public class CaptureOrderExample {
 ```
 ## Samples
 
-You can start off by trying out [creating and capturing an order](/src/test/java/com/paypal/orders/CaptureIntentExamples/RunAll.java).
+You can start off by trying out [creating and capturing an order](/checkout-sdk-sample/src/main/java/com/paypal/CaptureIntentExamples/RunAll.java).
 
-To try out different samples for both create and authorize intent head to [this link](/src/test/java/com/paypal/orders).
+To try out different samples for both create and authorize intent head to [this link](/checkout-sdk-sample/src/main/java/com/paypal).
