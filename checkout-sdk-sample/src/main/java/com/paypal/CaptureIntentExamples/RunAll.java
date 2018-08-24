@@ -7,6 +7,7 @@ import com.paypal.orders.Order;
 public class RunAll {
     public static void main(String[] args) {
         try {
+            // Creating Order
             HttpResponse<Order> orderResponse = new CreateOrder().createOrder(false);
             String orderId = "";
             System.out.println("Creating Order...");
@@ -20,6 +21,8 @@ public class RunAll {
             System.out.println("Created Successfully\n");
             System.out.println("Copy approve link and paste it in browser. Login with buyer account and follow the instructions.\nOnce approved hit enter...");
             System.in.read();
+
+            // Capturing Order
             System.out.println("Capturing Order...");
             orderResponse = new CaptureOrder().captureOrder(orderId, false);
             if (orderResponse.statusCode() == 201){

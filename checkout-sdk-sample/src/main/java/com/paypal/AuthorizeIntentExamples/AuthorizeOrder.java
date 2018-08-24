@@ -10,10 +10,21 @@ import com.paypal.orders.OrdersAuthorizeRequest;
 import java.io.IOException;
 
 public class AuthorizeOrder extends SampleSkeleton {
+    /**
+     * Building empty request body
+     * @return OrderActionRequest with empty body
+     */
     private OrderActionRequest buildRequestBody() {
         return new OrderActionRequest();
     }
 
+    /**
+     * Method to authorize order after creation
+     * @param orderId Order ID from createOrder response
+     * @param debug true = print response data
+     * @return HttpResponse<Order> response received from API
+     * @throws IOException Exceptions from API if any
+     */
     public HttpResponse<Order> authorizeOrder(String orderId, boolean debug) throws IOException {
         OrdersAuthorizeRequest request = new OrdersAuthorizeRequest(orderId);
         request.requestBody(buildRequestBody());

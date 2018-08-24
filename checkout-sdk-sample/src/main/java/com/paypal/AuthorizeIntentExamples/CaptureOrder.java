@@ -9,10 +9,21 @@ import com.paypal.SampleSkeleton;
 import java.io.IOException;
 
 public class CaptureOrder extends SampleSkeleton {
+    /**
+     * Creating empty body for capture request
+     * @return OrderRequest request with empty body
+     */
     public OrderRequest buildRequestBody() {
         return new OrderRequest();
     }
 
+    /**
+     * Method to capture order after authorization
+     * @param authId Authorization ID from authorizeOrder response
+     * @param debug true = print response data
+     * @return HttpResponse<Capture> response received from API
+     * @throws IOException Exceptions from API if any
+     */
     public HttpResponse<Capture> captureOrder(String authId, boolean debug) throws IOException {
         AuthorizationsCaptureRequest request = new AuthorizationsCaptureRequest(authId);
         request.requestBody(buildRequestBody());

@@ -7,10 +7,20 @@ import com.paypal.orders.*;
 import java.io.IOException;
 
 public class CaptureOrder extends SampleSkeleton {
+    /**
+     * Creating empty body for capture request
+     * @return OrderRequest request with empty body
+     */
     public OrderRequest buildRequestBody() {
         return new OrderRequest();
     }
-
+    /**
+     * Method to capture order after creation
+     * @param orderId Authorization ID from authorizeOrder response
+     * @param debug true = print response data
+     * @return HttpResponse<Capture> response received from API
+     * @throws IOException Exceptions from API if any
+     */
     public HttpResponse<Order> captureOrder(String orderId, boolean debug) throws IOException {
         OrdersCaptureRequest request = new OrdersCaptureRequest(orderId);
         request.requestBody(buildRequestBody());

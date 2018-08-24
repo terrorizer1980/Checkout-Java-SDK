@@ -2,22 +2,63 @@ package com.paypal;
 
 import com.braintreepayments.http.HttpResponse;
 import com.braintreepayments.http.serializer.Json;
-import com.paypal.orders.OrdersPatchRequest;
-import com.paypal.orders.Patch;
+import com.paypal.AuthorizeIntentExamples.CreateOrder;
+import com.paypal.orders.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PatchOrder extends SampleSkeleton {
-    private Patch buildRequestBody() throws IOException {
-        String json = "";
-        return new Json().decode(json, Patch.class);
+    /**
+     * Method to created body for patch order
+     * @return List<Patch> list of patches to be made
+     * @throws IOException
+     */
+    private List<Patch> buildRequestBody() throws IOException {
+        List<Patch> patches = new ArrayList<>();
+        patches.add(new Patch()
+                .op("replace")
+                .path("/intent")
+                .value("CAPTURE"));
+        patches.add(new Patch()
+                .op("replace")
+                .path("/purchase_units/@reference_id=='PUHF'/amount")
+                .value(new AmountWithBreakdown()
+                        .currencyCode("USD")
+                        .value("200.00")
+                        .breakdown(new AmountBreakdown()
+                            .itemTotal(new Money().currencyCode("USD").value("180.00"))
+                            .taxTotal(new Money().currencyCode("USD").value("20.00")))));
+        return patches;
     }
 
+    /**
+     * Method to patch order
+     * @throws IOException Exceptions from API if any
+     */
     public void patchOrder() throws IOException {
+        System.out.println("Before PATCH:");
+        HttpResponse<Order> response = new CreateOrder().createOrder(true);
 
-        OrdersPatchRequest request = new OrdersPatchRequest("0dA0yarCPMqNf ");
+        OrdersPatchRequest request = new OrdersPatchRequest(response.result().id());
         request.requestBody(buildRequestBody());
-        HttpResponse<Void> response = client().execute(request);
+        HttpResponse<Void> patchResponse = client().execute(request);
+        OrdersGetRequest getRequest = new OrdersGetRequest(response.result().id());
+        System.out.println("\nAfter PATCH (Changed Intent and Amount):");
+        response = client.execute(getRequest);
+        System.out.println("Status Code: " + response.statusCode());
+        System.out.println("Status: " + response.result().status());
+        System.out.println("Order ID: " + response.result().id());
+        System.out.println("Intent: " + response.result().intent());
+        System.out.println("Links: ");
+        for (LinkDescription link : response.result().links()) {
+            System.out.println("\t" + link.rel() + ": " + link.href() + "\tCall Type: " + link.method());
+        }
+        System.out.println("Gross Amount: " + response.result().grossAmount().currencyCode() + " " + response.result().grossAmount().value());
+    }
 
+    public static void main(String[] args) throws IOException {
+        new PatchOrder().patchOrder();
     }
 }

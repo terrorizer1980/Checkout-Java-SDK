@@ -9,6 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CreateOrder extends SampleSkeleton {
+    /**
+     * Method to create order body with <b>CAPTURE</b> intent
+     * @return  OrderRequest with created order request
+     */
     private OrderRequest buildRequestBody() {
         OrderRequest orderRequest = new OrderRequest();
         orderRequest.intent("CAPTURE");
@@ -89,17 +93,27 @@ public class CreateOrder extends SampleSkeleton {
         return orderRequest;
     }
 
+    /**
+     * Method to create order
+     * @param debug true = print response data
+     * @return HttpResponse<Order> response received from API
+     * @throws IOException Exceptions from API if any
+     */
     public HttpResponse<Order> createOrder(boolean debug) throws IOException {
         OrdersCreateRequest request = new OrdersCreateRequest();
         request.requestBody(buildRequestBody());
         HttpResponse<Order> response = client().execute(request);
         if (debug) {
             if (response.statusCode() == 201) {
-                System.out.println("Order id: " + response.result().id());
+                System.out.println("Status Code: " + response.statusCode());
+                System.out.println("Status: " + response.result().status());
+                System.out.println("Order ID: " + response.result().id());
+                System.out.println("Intent: " + response.result().intent());
                 System.out.println("Links: ");
                 for (LinkDescription link : response.result().links()) {
-                    System.out.println("\t" + link.rel() + ": " + link.href());
+                    System.out.println("\t" + link.rel() + ": " + link.href() + "\tCall Type: " + link.method());
                 }
+                System.out.println("Gross Amount: " + response.result().grossAmount().currencyCode() + " " + response.result().grossAmount().value());
             }
         }
         return response;

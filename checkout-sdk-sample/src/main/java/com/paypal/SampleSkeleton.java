@@ -9,15 +9,27 @@ import org.json.JSONObject;
 import java.util.Iterator;
 
 public class SampleSkeleton {
+    // Setting up environment
     private PayPalEnvironment environment = new PayPalEnvironment.Sandbox(
             "AYSq3RDGsmBLJE-otTkBtM-jBRd1TCQwFf9RGfwddNXWz0uFU9ztymylOhRS",
             "EGnHDxD_qRPdaLdZz8iCr8N7_MzF-YHPTkjs6NKYQvQSBngp4PTTVWkPZRbL");
+    // Setting up client for that order
     PayPalHttpClient client = new PayPalHttpClient(environment);
 
+    /**
+     * Method to get client object
+     * @return PayPalHttpClient client
+     */
     public PayPalHttpClient client() {
         return this.client;
     }
 
+    /**
+     * Method to pretty print a response
+     * @param jo JSONObject
+     * @param pre prefix (default="")
+     * @return String pretty printed JSON
+     */
     public String prettyPrint(JSONObject jo, String pre)
     {
         Iterator<?> keys = jo.keys();
