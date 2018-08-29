@@ -115,6 +115,18 @@ public class CaptureOrderExample {
     }
 }
 ```
+## Running tests
+
+To run integration tests using your client id and secret, run the `test` gradle command with the `-Pintegration` flag
+```sh
+$ PAYPAL_CLIENT_ID=your_client_id PAYPAL_CLIENT_SECRET=your_client_secret ./gradlew clean test -Pintegration
+```
+
+You may use the client id and secret above for demonstration purposes.
+
+
+*NOTE*: This SDK is still in beta, is subject to change, and should not be used in production.
+
 ## Samples
 
 You can start off by trying out [creating and capturing an order](/checkout-sdk-sample/src/main/java/com/paypal/CaptureIntentExamples/RunAll.java).

@@ -1,6 +1,7 @@
 .DS_STORE
 .idea/
 *.class
+.gradle
 
 # Created by https://www.gitignore.io/api/java
 

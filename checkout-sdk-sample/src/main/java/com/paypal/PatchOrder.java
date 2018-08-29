@@ -37,18 +37,12 @@ public class PatchOrder extends SampleSkeleton {
      * Method to patch order
      * @throws IOException Exceptions from API if any
      */
-    public void patchOrder() throws IOException {
-        System.out.println("Before PATCH:");
-        HttpResponse<Order> response = new CreateOrder().createOrder(true);
-
-        OrdersPatchRequest request = new OrdersPatchRequest(response.result().id());
+    public void patchOrder(String orderId) throws IOException {
+        OrdersPatchRequest request = new OrdersPatchRequest(orderId);
         request.requestBody(buildRequestBody());
         HttpResponse<Void> patchResponse = client().execute(request);
-        OrdersGetRequest getRequest = new OrdersGetRequest(response.result().id());
-        System.out.println("\nAfter PATCH (Changed Intent and Amount):");
-        response = client.execute(getRequest);
-        System.out.println("Status Code: " + response.statusCode());
-        System.out.println("Status: " + response.result().status());
+        OrdersGetRequest getRequest = new OrdersGetRequest(orderId);
+        HttpResponse<Order> response = client.execute(getRequest);
         System.out.println("Order ID: " + response.result().id());
         System.out.println("Intent: " + response.result().intent());
         System.out.println("Links: ");
@@ -59,6 +53,9 @@ public class PatchOrder extends SampleSkeleton {
     }
 
     public static void main(String[] args) throws IOException {
-        new PatchOrder().patchOrder();
+        System.out.println("Before PATCH:");
+        HttpResponse<Order> response = new CreateOrder().createOrder(true);
+        System.out.println("\nAfter PATCH (Changed Intent and Amount):");
+        new PatchOrder().patchOrder(response.result().id());
     }
 }
