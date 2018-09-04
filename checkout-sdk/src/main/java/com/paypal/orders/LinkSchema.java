@@ -1,4 +1,4 @@
-// This class was generated on Wed, 22 Aug 2018 20:49:05 PDT by version 0.1.0-dev+904328-dirty of Braintree SDK Generator
+// This class was generated on Tue, 04 Sep 2018 12:15:13 PDT by version 0.1.0-dev+904328-dirty of Braintree SDK Generator
 // LinkSchema.java
 // @version 0.1.0-dev+904328-dirty
 // @type object
@@ -32,31 +32,31 @@ public class LinkSchema {
 	    return this;
 	}
 
-//	/**
-//	* An array of sub-schemas. The data must validate against all sub-schemas.
-//	*/
-//	@SerializedName(value = "allOf", listClass = AllOfItem.class)
-//	private List<AllOfItem> allOf;
-//
-//	public List<AllOfItem> allOf() { return allOf; }
-//
-//	public LinkSchema allOf(List<AllOfItem> allOf) {
-//	    this.allOf = allOf;
-//	    return this;
-//	}
-//
-//	/**
-//	* An array of sub-schemas. The data must validate against one or more sub-schemas.
-//	*/
-//	@SerializedName(value = "anyOf", listClass = AnyOfItem.class)
-//	private List<AnyOfItem> anyOf;
-//
-//	public List<AnyOfItem> anyOf() { return anyOf; }
-//
-//	public LinkSchema anyOf(List<AnyOfItem> anyOf) {
-//	    this.anyOf = anyOf;
-//	    return this;
-//	}
+	/**
+	* An array of sub-schemas. The data must validate against all sub-schemas.
+	*/
+	@SerializedName(value = "allOf", listClass = AllOfItem.class)
+	private List<AllOfItem> allOf;
+
+	public List<AllOfItem> allOf() { return allOf; }
+	
+	public LinkSchema allOf(List<AllOfItem> allOf) {
+	    this.allOf = allOf;
+	    return this;
+	}
+
+	/**
+	* An array of sub-schemas. The data must validate against one or more sub-schemas.
+	*/
+	@SerializedName(value = "anyOf", listClass = AnyOfItem.class)
+	private List<AnyOfItem> anyOf;
+
+	public List<AnyOfItem> anyOf() { return anyOf; }
+	
+	public LinkSchema anyOf(List<AnyOfItem> anyOf) {
+	    this.anyOf = anyOf;
+	    return this;
+	}
 
 	/**
 	*/
@@ -107,18 +107,18 @@ public class LinkSchema {
 	    return this;
 	}
 
-//	/**
-//	* An array of links.
-//	*/
-//	@SerializedName(value = "links", listClass = Link.class)
-//	private List<Link> links;
-//
-//	public List<Link> links() { return links; }
-//
-//	public LinkSchema links(List<Link> links) {
-//	    this.links = links;
-//	    return this;
-//	}
+	/**
+	* An array of links.
+	*/
+	@SerializedName(value = "links", listClass = Link.class)
+	private List<Link> links;
+
+	public List<Link> links() { return links; }
+	
+	public LinkSchema links(List<Link> links) {
+	    this.links = links;
+	    return this;
+	}
 
 	/**
 	* The media type and context-encoding scheme.
@@ -145,18 +145,18 @@ public class LinkSchema {
 	    return this;
 	}
 
-//	/**
-//	* An array of sub-schemas. The data must validate against one sub-schema.
-//	*/
-//	@SerializedName(value = "oneOf", listClass = OneOfItem.class)
-//	private List<OneOfItem> oneOf;
-//
-//	public List<OneOfItem> oneOf() { return oneOf; }
-//
-//	public LinkSchema oneOf(List<OneOfItem> oneOf) {
-//	    this.oneOf = oneOf;
-//	    return this;
-//	}
+	/**
+	* An array of sub-schemas. The data must validate against one sub-schema.
+	*/
+	@SerializedName(value = "oneOf", listClass = OneOfItem.class)
+	private List<OneOfItem> oneOf;
+
+	public List<OneOfItem> oneOf() { return oneOf; }
+	
+	public LinkSchema oneOf(List<OneOfItem> oneOf) {
+	    this.oneOf = oneOf;
+	    return this;
+	}
 
 	/**
 	* To apply this schema to the instances' URIs, start the URIs with this value.
