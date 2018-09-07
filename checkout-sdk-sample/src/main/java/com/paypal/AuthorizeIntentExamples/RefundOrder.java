@@ -1,50 +1,49 @@
-package com.paypal.CaptureIntentExamples;
+package com.paypal.AuthorizeIntentExamples;
 
 import com.braintreepayments.http.HttpResponse;
+import com.paypal.payments.*;
+import com.paypal.orders.OrderRequest;
+import com.paypal.payments.Capture;
 import com.paypal.SampleSkeleton;
-import com.paypal.orders.*;
 
 import java.io.IOException;
 
-public class CaptureOrder extends SampleSkeleton {
+public class RefundOrder extends SampleSkeleton {
     /**
-     * Creating empty body for capture request
+     * Creating empty body for refund request
      * @return OrderRequest request with empty body
      */
     public OrderRequest buildRequestBody() {
         return new OrderRequest();
     }
+
     /**
-     * Method to capture order after creation
-     * @param orderId Authorization ID from authorizeOrder response
+     * Method to capture order after authorization
+     * @param captureId Capture ID from authorizeOrder response
      * @param debug true = print response data
      * @return HttpResponse<Capture> response received from API
      * @throws IOException Exceptions from API if any
      */
-    public HttpResponse<Order> captureOrder(String orderId, boolean debug) throws IOException {
-        OrdersCaptureRequest request = new OrdersCaptureRequest(orderId);
+    public HttpResponse<Refund> refundOrder(String captureId, boolean debug) throws IOException {
+        CapturesRefundRequest request = new CapturesRefundRequest(captureId);
+        request.prefer("return=representation");
         request.requestBody(buildRequestBody());
-        HttpResponse<Order> response = client().execute(request);
+        HttpResponse<Refund> response = client().execute(request);
         if (debug){
             System.out.println("Status Code: " + response.statusCode());
             System.out.println("Status: " + response.result().status());
             System.out.println("Order ID: " + response.result().id());
             System.out.println("Links: ");
             for (LinkDescription link : response.result().links()) {
-                System.out.println("\t" + link.rel() + ": " + link.href());
+                System.out.println("\t" + link.rel() + ": " + link.href() + "\tCall Type: " + link.method());
             }
-            System.out.println("Buyer: ");
-            Customer buyer = response.result().payer();
-            System.out.println("\tEmail Address: " + buyer.emailAddress());
-            System.out.println("\tName: " + buyer.name().fullName());
-            System.out.println("\tPhone Number: " + buyer.phone().countryCode() + buyer.phone().nationalNumber());
         }
         return response;
     }
 
     public static void main(String[] args) {
         try {
-            new CaptureOrder().captureOrder("ORDER-ID", true);
+            new RefundOrder().refundOrder("CAPTURE-ID", true);
         }catch (Exception e){
             e.printStackTrace();
         }

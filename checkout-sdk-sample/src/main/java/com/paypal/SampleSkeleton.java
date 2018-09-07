@@ -11,8 +11,8 @@ import java.util.Iterator;
 public class SampleSkeleton {
     // Setting up environment
     private PayPalEnvironment environment = new PayPalEnvironment.Sandbox(
-            "AYSq3RDGsmBLJE-otTkBtM-jBRd1TCQwFf9RGfwddNXWz0uFU9ztymylOhRS",
-            "EGnHDxD_qRPdaLdZz8iCr8N7_MzF-YHPTkjs6NKYQvQSBngp4PTTVWkPZRbL");
+            "AVNCVvV9oQ7qee5O8OW4LSngEeU1dI7lJAGCk91E_bjrXF2LXB2TK2ICXQuGtpcYSqs4mz1BMNQWuso1",
+            "EDQzd81k-1z2thZw6typSPOTEjxC_QbJh6IithFQuXdRFc7BjVht5rQapPiTaFt5RC-HCa1ir6mi-H5l");
     // Setting up client for that order
     PayPalHttpClient client = new PayPalHttpClient(environment);
 

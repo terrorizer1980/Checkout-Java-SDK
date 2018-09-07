@@ -37,4 +37,12 @@ public class AuthorizeOrder extends SampleSkeleton {
         }
         return response;
     }
+
+    public static void main(String[] args) {
+        try {
+            new AuthorizeOrder().authorizeOrder("ORDER-ID", true);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

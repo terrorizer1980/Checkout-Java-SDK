@@ -21,8 +21,8 @@ public class CreateOrder extends SampleSkeleton {
         ApplicationContext applicationContext = new ApplicationContext()
                 .brandName("EXAMPLE INC")
                 .landingPage("BILLING")
-                .cancelUrl("https://www.google.com")
-                .returnUrl("https://www.google.com")
+                .cancelUrl("https://www.example.com")
+                .returnUrl("https://www.example.com")
                 .userAction("CONTINUE")
                 .shippingPreference("SET_PROVIDED_ADDRESS");
         orderRequest.applicationContext(applicationContext);
@@ -79,7 +79,7 @@ public class CreateOrder extends SampleSkeleton {
                             .category("PHYSICAL_GOODS"));}})
                 .shipping(new ShippingDetails()
                         .name(new Name().fullName("John Doe"))
-                        .address(new PortablePostalAddress()
+                        .addressPortable(new AddressPortable()
                                 .addressLine1("123 Townsend St")
                                 .addressLine2("Floor 6")
                                 .adminArea2("San Francisco")
@@ -113,7 +113,7 @@ public class CreateOrder extends SampleSkeleton {
                 for (LinkDescription link : response.result().links()) {
                     System.out.println("\t" + link.rel() + ": " + link.href() + "\tCall Type: " + link.method());
                 }
-                System.out.println("Gross Amount: " + response.result().grossAmount().currencyCode() + " " + response.result().grossAmount().value());
+                System.out.println("Total Amount: " + response.result().purchaseUnits().get(0).amount().currencyCode() + " " + response.result().purchaseUnits().get(0).amount().value());
             }
         }
         return response;

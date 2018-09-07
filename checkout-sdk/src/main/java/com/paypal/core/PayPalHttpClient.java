@@ -20,6 +20,8 @@ public class PayPalHttpClient extends HttpClient {
 		super(environment);
 		this.addInjector(this::addGzipHeader);
 		this.addInjector(this::signRequest);
+		this.addInjector(this::addFPTIHeaders);
+
 	}
 
 	public PayPalHttpClient(PayPalEnvironment environment, String refreshToken) {
@@ -37,6 +39,13 @@ public class PayPalHttpClient extends HttpClient {
 			AccessToken accessToken = AuthorizationProvider.sharedInstance().authorize(this, refreshToken);
 			request.header(AUTHORIZATION, accessToken.authorizationString());
 		}
+	}
+
+	private void addFPTIHeaders(HttpRequest request) throws IOException {
+		request.header("sdk_name", "Checkout SDK");
+		request.header("sdk_version", "1.0.0");
+		request.header("sdk_tech_stack", "Java " + System.getProperty("java.version"));
+		request.header("api_integration_type", "PAYPALSDK");
 	}
 
 	private void addGzipHeader(HttpRequest request) throws IOException {

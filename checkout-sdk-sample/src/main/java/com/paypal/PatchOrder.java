@@ -49,7 +49,7 @@ public class PatchOrder extends SampleSkeleton {
         for (LinkDescription link : response.result().links()) {
             System.out.println("\t" + link.rel() + ": " + link.href() + "\tCall Type: " + link.method());
         }
-        System.out.println("Gross Amount: " + response.result().grossAmount().currencyCode() + " " + response.result().grossAmount().value());
+        System.out.println("Gross Amount: " + response.result().purchaseUnits().get(0).amount().currencyCode() + " " + response.result().purchaseUnits().get(0).amount().value());
     }
 
     public static void main(String[] args) throws IOException {

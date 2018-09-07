@@ -42,7 +42,7 @@ public class CaptureOrder extends SampleSkeleton {
 
     public static void main(String[] args) {
         try {
-            new CaptureOrder().captureOrder("3GE1976542881364S", true);
+            new CaptureOrder().captureOrder("AUTHORIZATION-ID", true);
         }catch (Exception e){
             e.printStackTrace();
         }
