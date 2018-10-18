@@ -8,7 +8,7 @@ import java.util.*;
 
 import com.paypal.orders.*;
 
-public class ErrorSample extends SampleSkeleton {
+public class ErrorSample extends PayPalClient {
 
     /**
      * Body has no required parameters (intent, purchase_units)

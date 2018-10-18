@@ -1,5 +1,8 @@
 package com.paypal.AuthorizeIntentExamples;
+import org.json.JSONObject;
+
 import com.braintreepayments.http.HttpResponse;
+import com.braintreepayments.http.serializer.Json;
 import com.paypal.payments.Capture;
 import com.paypal.orders.LinkDescription;
 import com.paypal.orders.Order;
@@ -13,6 +16,7 @@ public class RunAll {
             HttpResponse<Order> orderResponse = new CreateOrder().createOrder(false);
             String orderId = "";
             System.out.println("Creating Order...");
+            System.out.println("Response Body:"+ new JSONObject(new Json().serialize(orderResponse.result())).toString(4));
             if (orderResponse.statusCode() == 201){
                 orderId = orderResponse.result().id();
                 System.out.println("Order ID: " + orderId);
