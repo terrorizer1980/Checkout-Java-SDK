@@ -4,7 +4,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONObject;
+
 import com.braintreepayments.http.HttpResponse;
+import com.braintreepayments.http.serializer.Json;
 import com.paypal.AuthorizeIntentExamples.CreateOrder;
 import com.paypal.orders.AmountBreakdown;
 import com.paypal.orders.AmountWithBreakdown;
@@ -40,9 +43,10 @@ public class PatchOrder extends PayPalClient {
 	public void patchOrder(String orderId) throws IOException {
 		OrdersPatchRequest request = new OrdersPatchRequest(orderId);
 		request.requestBody(buildRequestBody());
-		HttpResponse<Void> patchResponse = client().execute(request);
+		client().execute(request);
 		OrdersGetRequest getRequest = new OrdersGetRequest(orderId);
 		HttpResponse<Order> response = client.execute(getRequest);
+		System.out.println("After Patch:");
 		System.out.println("Order ID: " + response.result().id());
 		System.out.println("Intent: " + response.result().intent());
 		System.out.println("Links: ");
@@ -51,6 +55,8 @@ public class PatchOrder extends PayPalClient {
 		}
 		System.out.println("Gross Amount: " + response.result().purchaseUnits().get(0).amount().currencyCode() + " "
 				+ response.result().purchaseUnits().get(0).amount().value());
+		System.out.println("Full response body:");
+		System.out.println(new JSONObject(new Json().serialize(response.result())).toString(4));
 	}
 
 	public static void main(String[] args) throws IOException {

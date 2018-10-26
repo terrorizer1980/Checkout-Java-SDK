@@ -4,7 +4,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONObject;
+
 import com.braintreepayments.http.HttpResponse;
+import com.braintreepayments.http.serializer.Json;
 import com.paypal.PayPalClient;
 import com.paypal.orders.AddressPortable;
 import com.paypal.orders.AmountBreakdown;
@@ -39,9 +42,9 @@ public class CreateOrder extends PayPalClient {
 		List<PurchaseUnitRequest> purchaseUnitRequests = new ArrayList<PurchaseUnitRequest>();
 		PurchaseUnitRequest purchaseUnitRequest = new PurchaseUnitRequest().referenceId("PUHF")
 				.description("Sporting Goods").customId("CUST-HighFashions").softDescriptor("HighFashions")
-				.amount(new AmountWithBreakdown().currencyCode("USD").value("230.00")
+				.amount(new AmountWithBreakdown().currencyCode("USD").value("220.00")
 						.breakdown(new AmountBreakdown().itemTotal(new Money().currencyCode("USD").value("180.00"))
-								.shipping(new Money().currencyCode("USD").value("30.00"))
+								.shipping(new Money().currencyCode("USD").value("20.00"))
 								.handling(new Money().currencyCode("USD").value("10.00"))
 								.taxTotal(new Money().currencyCode("USD").value("20.00"))
 								.shippingDiscount(new Money().currencyCode("USD").value("10.00"))))
@@ -89,6 +92,8 @@ public class CreateOrder extends PayPalClient {
 				}
 				System.out.println("Total Amount: " + response.result().purchaseUnits().get(0).amount().currencyCode()
 						+ " " + response.result().purchaseUnits().get(0).amount().value());
+				System.out.println("Full response body:");
+				System.out.println(new JSONObject(new Json().serialize(response.result())).toString(4));
 			}
 		}
 		return response;

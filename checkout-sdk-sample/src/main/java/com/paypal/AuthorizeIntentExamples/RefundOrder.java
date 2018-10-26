@@ -2,7 +2,10 @@ package com.paypal.AuthorizeIntentExamples;
 
 import java.io.IOException;
 
+import org.json.JSONObject;
+
 import com.braintreepayments.http.HttpResponse;
+import com.braintreepayments.http.serializer.Json;
 import com.paypal.PayPalClient;
 import com.paypal.payments.CapturesRefundRequest;
 import com.paypal.payments.LinkDescription;
@@ -48,6 +51,8 @@ public class RefundOrder extends PayPalClient {
 			for (LinkDescription link : response.result().links()) {
 				System.out.println("\t" + link.rel() + ": " + link.href() + "\tCall Type: " + link.method());
 			}
+			System.out.println("Full response body:");
+			System.out.println(new JSONObject(new Json().serialize(response.result())).toString(4));
 		}
 		return response;
 	}

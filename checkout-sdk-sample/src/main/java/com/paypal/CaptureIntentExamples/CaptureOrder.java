@@ -2,7 +2,10 @@ package com.paypal.CaptureIntentExamples;
 
 import java.io.IOException;
 
+import org.json.JSONObject;
+
 import com.braintreepayments.http.HttpResponse;
+import com.braintreepayments.http.serializer.Json;
 import com.paypal.PayPalClient;
 import com.paypal.orders.Capture;
 import com.paypal.orders.Customer;
@@ -56,6 +59,8 @@ public class CaptureOrder extends PayPalClient {
 			System.out.println("\tEmail Address: " + buyer.emailAddress());
 			System.out.println("\tName: " + buyer.name().fullName());
 			System.out.println("\tPhone Number: " + buyer.phone().countryCode() + buyer.phone().nationalNumber());
+			System.out.println("Full response body:");
+			System.out.println(new JSONObject(new Json().serialize(response.result())).toString(4));
 		}
 		return response;
 	}
