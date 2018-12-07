@@ -1,4 +1,4 @@
-package com.paypal.AuthorizeIntentExamples;
+package com.paypal.authorizeintentexamples.as1;
 import com.braintreepayments.http.HttpResponse;
 import com.paypal.orders.LinkDescription;
 import com.paypal.orders.Order;

@@ -1,4 +1,4 @@
-package com.paypal.AuthorizeIntentExamples;
+package com.paypal.authorizeintentexamples.as2;
 
 import java.io.IOException;
 
@@ -10,7 +10,9 @@ import com.paypal.PayPalClient;
 import com.paypal.orders.OrderRequest;
 import com.paypal.payments.AuthorizationsCaptureRequest;
 import com.paypal.payments.Capture;
+import com.paypal.payments.CaptureRequest;
 import com.paypal.payments.LinkDescription;
+import com.paypal.payments.Money;
 
 public class CaptureOrder extends PayPalClient {
 
@@ -19,8 +21,8 @@ public class CaptureOrder extends PayPalClient {
 	 * 
 	 * @return OrderRequest request with empty body
 	 */
-	public OrderRequest buildRequestBody() {
-		return new OrderRequest();
+	public CaptureRequest buildRequestBody(boolean isFinalCapture) {
+		return new CaptureRequest().amount(new Money().currencyCode("USD").value("10")).finalCapture(isFinalCapture);
 	}
 
 	/**
@@ -31,9 +33,9 @@ public class CaptureOrder extends PayPalClient {
 	 * @return HttpResponse<Capture> response received from API
 	 * @throws IOException Exceptions from API if any
 	 */
-	public HttpResponse<Capture> captureOrder(String authId, boolean debug) throws IOException {
+	public HttpResponse<Capture> captureOrder(String authId, boolean isFinalCapture, boolean debug) throws IOException {
 		AuthorizationsCaptureRequest request = new AuthorizationsCaptureRequest(authId);
-		request.requestBody(buildRequestBody());
+		request.requestBody(buildRequestBody(isFinalCapture));
 		HttpResponse<Capture> response = client().execute(request);
 		if (debug) {
 			System.out.println("Status Code: " + response.statusCode());
@@ -58,7 +60,7 @@ public class CaptureOrder extends PayPalClient {
 	 */
 	public static void main(String[] args) {
 		try {
-			new CaptureOrder().captureOrder("4TE71927R64954031", true);
+			new CaptureOrder().captureOrder("4TE71927R64954031", true, true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
