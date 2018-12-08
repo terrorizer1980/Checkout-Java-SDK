@@ -1,4 +1,4 @@
-package com.paypal.authorizeintentexamples.as2;
+package com.paypal.AuthorizeIntentExamples;
 
 import java.io.IOException;
 
@@ -11,10 +11,8 @@ import com.paypal.orders.LinkDescription;
 import com.paypal.orders.Order;
 import com.paypal.orders.OrderActionRequest;
 import com.paypal.orders.OrdersAuthorizeRequest;
-import com.paypal.orders.OrdersSaveRequest;
-import com.paypal.orders.PurchaseUnit;
 
-public class SaveOrder extends PayPalClient {
+public class AuthorizeOrder extends PayPalClient {
 
 	/**
 	 * Building empty request body. This can be updated with required fields as per
@@ -34,13 +32,14 @@ public class SaveOrder extends PayPalClient {
 	 * @return HttpResponse<Order> response received from API
 	 * @throws IOException Exceptions from API if any
 	 */
-	public HttpResponse<Order> saveOrder(String orderId, boolean debug) throws IOException {
-		OrdersSaveRequest request = new OrdersSaveRequest(orderId);
+	public HttpResponse<Order> authorizeOrder(String orderId, boolean debug) throws IOException {
+		OrdersAuthorizeRequest request = new OrdersAuthorizeRequest(orderId);
 		request.requestBody(buildRequestBody());
 		HttpResponse<Order> response = client().execute(request);
 		if (debug) {
-			System.out.println("Order O-Ids:");
-			response.result().purchaseUnits().stream().map(PurchaseUnit::id).forEach(System.out::println);
+			System.out.println("Authorization Ids:");
+			response.result().purchaseUnits().forEach(purchaseUnit -> purchaseUnit.payments().authorizations().stream()
+					.map(authorization -> authorization.id()).forEach(System.out::println));
 			System.out.println("Link Descriptions: ");
 			for (LinkDescription link : response.result().links()) {
 				System.out.println("\t" + link.rel() + ": " + link.href());
@@ -59,7 +58,7 @@ public class SaveOrder extends PayPalClient {
 	 */
 	public static void main(String[] args) {
 		try {
-			new SaveOrder().saveOrder("7HA75945773554815", true);
+			new AuthorizeOrder().authorizeOrder("7HA75945773554815", true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

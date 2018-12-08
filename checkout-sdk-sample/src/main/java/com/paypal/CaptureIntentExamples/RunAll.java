@@ -1,6 +1,6 @@
-package com.paypal.captureintentexamples;
+package com.paypal.CaptureIntentExamples;
 import com.braintreepayments.http.HttpResponse;
-import com.paypal.authorizeintentexamples.as1.RefundOrder;
+import com.paypal.AuthorizeIntentExamples.RefundOrder;
 import com.paypal.orders.Capture;
 import com.paypal.orders.LinkDescription;
 import com.paypal.orders.Order;

@@ -1,4 +1,4 @@
-package com.paypal.captureintentexamples;
+package com.paypal.CaptureIntentExamples;
 
 import java.io.IOException;
 
