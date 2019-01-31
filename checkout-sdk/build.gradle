@@ -2,8 +2,8 @@ plugins {
     id 'java'
 }
 
-group 'com.paypal'
-version '1.0.0'
+group 'com.paypal.checkout.sdk'
+version '1.0.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 

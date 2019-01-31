@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.paypal.orders.OrdersGetTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-09-04T21:10:13" hostname="LM-SJN-21017303" time="1.673">
-  <properties/>
-  <testcase name="testOrdersGetRequest" classname="com.paypal.orders.OrdersGetTest" time="1.673"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
