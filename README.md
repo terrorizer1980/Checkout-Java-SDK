@@ -14,7 +14,7 @@ This is a part of the next major PayPal SDK. It includes a simplified interface 
 
 ## Prerequisites
 
-Java JDK 6 or higher
+Java JDK 8 or higher
 
 An environment which supports TLS 1.2 (see the TLS-update site for more information)
 
