@@ -9,6 +9,7 @@ buildscript {
 
      group 'com.paypal.checkout.sdk'
      version '1.0.0-RC2'
+     
      sourceCompatibility = 1.8
      targetCompatibility = 1.8
 
