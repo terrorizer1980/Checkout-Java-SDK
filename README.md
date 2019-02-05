@@ -15,7 +15,7 @@ An environment which supports TLS 1.2 (see the TLS-update site for more informat
 ## Usage
 ### Binaries
 
-It is not mandatory to fork this repository for using the PayPal SDK. You can refer https://developer.paypal.com/docs/checkout/reference/server-integration for configuring and working with SDK without forking this code.
+It is not mandatory to fork this repository for using the PayPal SDK. You can refer [PayPal Checkout Server SDK](https://developer.paypal.com/docs/checkout/reference/server-integration) for configuring and working with SDK without forking this code.
 
 For contirbuting or referrring the samples, You can fork/refer this repository. 
 
@@ -139,8 +139,6 @@ $ PAYPAL_CLIENT_ID=your_client_id PAYPAL_CLIENT_SECRET=your_client_secret ./grad
 
 You may use the client id and secret above for demonstration purposes.
 
-
-*NOTE*: This SDK is still in beta, is subject to change, and should not be used in production.
 
 ## Samples
 
