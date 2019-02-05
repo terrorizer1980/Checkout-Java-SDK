@@ -6,12 +6,6 @@ __Welcome to PayPal Java SDK__. This repository contains PayPal's Java SDK and s
 
 This is a part of the next major PayPal SDK. It includes a simplified interface to only provide simple model objects and blueprints for HTTP calls. This repo currently contains functionality for PayPal Checkout APIs which includes Orders V2 and Payments V2.
 
-## Please Note
-> **The Payment Card Industry (PCI) Council has [mandated](http://blog.pcisecuritystandards.org/migrating-from-ssl-and-early-tls) that early versions of TLS be retired from service.  All organizations that handle credit card information are required to comply with this standard. As part of this obligation, PayPal is updating its services to require TLS 1.2 for all HTTPS connections. At this time, PayPal will also require HTTP/1.1 for all connections. [Click here](https://github.com/paypal/tls-update) for more information. Connections to the sandbox environment use only TLS 1.2.**
-
-## Direct Credit Card Support
-> **Important: The PayPal REST API no longer supports new direct credit card integrations.**  Please instead consider [Braintree Direct](https://www.braintreepayments.com/products/braintree-direct); which is, PayPal's preferred integration solution for accepting direct credit card payments in your mobile app or website. Braintree, a PayPal service, is the easiest way to accept credit cards, PayPal, and many other payment methods.
-
 ## Prerequisites
 
 Java JDK 8 or higher
@@ -19,11 +13,18 @@ Java JDK 8 or higher
 An environment which supports TLS 1.2 (see the TLS-update site for more information)
 
 ## Usage
+### Binaries
+
+It is not mandatory to fork this repository for using the PayPal SDK. You can refer [PayPal Checkout Server SDK](https://developer.paypal.com/docs/checkout/reference/server-integration) for configuring and working with SDK without forking this code.
+
+For contirbuting or referrring the samples, You can fork/refer this repository. 
 
 ### Setting up credentials
+
 Get client ID and client secret by going to https://developer.paypal.com/developer/applications and generating a REST API app. Get <b>Client ID</b> and <b>Secret</b> from there.
 
 ```java
+package com.paypal;
 import com.paypal.core.PayPalEnvironment;
 import com.paypal.core.PayPalHttpClient;
 public class Credentials {
@@ -31,7 +32,7 @@ public class Credentials {
     static String secret = "CLIENT-SECRET";
     
     // Creating a sandbox environment
-    private PayPalEnvironment environment = new PayPalEnvironment.Sandbox(clientId, secret);
+    private static PayPalEnvironment environment = new PayPalEnvironment.Sandbox(clientId, secret);
     
     // Creating a client for the environment
     static PayPalHttpClient client = new PayPalHttpClient(environment);
@@ -43,76 +44,90 @@ public class Credentials {
 This will create an order and print order id for the created order
 
 ```java
+package com.paypal;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.braintreepayments.http.HttpResponse;
+import com.braintreepayments.http.exceptions.HttpException;
 import com.paypal.orders.*;
 
 public class CreateOrderExample {
-    public static void main(String[] args){
-        
-        // Construct a request object and set desired parameters
-        // Here, OrdersCreateRequest() creates a POST request to /v2/checkout/orders
-        OrdersCreateRequest request = new OrdersCreateRequest()
-                                          .requestBody(new OrderRequest()
-                                              .intent("CAPTURE")
-                                              .purchaseUnits(new ArrayList<PurchaseUnitRequest> () {{
-                                                  add(new Item()
-                                                      .unitAmount(new Money()
-                                                          .currencyCode("USD")
-                                                          .value("100.00")
-                                                      )); 
-                                                  }}
-                                              ));
-        
-        try {
-            // Call API with your client and get a response for your call
-            HttpResponse<Order> response = Credentials.client.execute(request);  
-            
-            // If call returns body in response, you can get the deserialized version by calling result() on the response
-            Order order = response.result();
-            System.out.println("Order ID: ", order.id());
-        } catch (IOException ioe) {
-            if (ioe instanceof HttpException) {
-              // Something went wrong server-side
-            HttpException he = (HttpException) ioe;
-            int statusCode = he.getStatusCode();
-            String debugId = he.getMessage().get("debug_id");
-            } else {
-            // Something went wrong client-side
-            }
-        }
-    }
+	public static void main(String[] args) {
+
+		Order order = null;
+		// Construct a request object and set desired parameters
+		// Here, OrdersCreateRequest() creates a POST request to /v2/checkout/orders
+		OrderRequest orderRequest = new OrderRequest();
+		orderRequest.intent("CAPTURE");
+		List<PurchaseUnitRequest> purchaseUnits = new ArrayList<>();
+		purchaseUnits
+				.add(new PurchaseUnitRequest().amount(new AmountWithBreakdown().currencyCode("USD").value("100.00")));
+		orderRequest.purchaseUnits(purchaseUnits);
+		OrdersCreateRequest request = new OrdersCreateRequest().requestBody(orderRequest);
+
+		try {
+			// Call API with your client and get a response for your call
+			HttpResponse<Order> response = Credentials.client.execute(request);
+
+			// If call returns body in response, you can get the de-serialized version by
+			// calling result() on the response
+			order = response.result();
+			System.out.println("Order ID: " + order.id());
+			order.links().forEach(link -> System.out.println(link.rel() + " => " + link.method() + ":" + link.href()));
+		} catch (IOException ioe) {
+			if (ioe instanceof HttpException) {
+				// Something went wrong server-side
+				HttpException he = (HttpException) ioe;
+				System.out.println(he.getMessage());
+				he.headers().forEach(x -> System.out.println(x + " :" + he.headers().header(x)));
+			} else {
+				// Something went wrong client-side
+			}
+		}
+	}
 }
 ```
 
 ### Capturing an Order
 This will capture an order
 ```java
+package com.paypal;
+
+import java.io.IOException;
+
+import com.braintreepayments.http.HttpResponse;
+import com.braintreepayments.http.exceptions.HttpException;
 import com.paypal.orders.*;
 
 public class CaptureOrderExample {
-    public static void main(String[] args){
-        
-        // Construct a request object and set desired parameters
-        // Here, OrdersCaptureRequest() creates a POST request to /v2/checkout/orders
-        // Replace ORDER-ID with the order id from create order
-        OrdersCaptureRequest request = new OrdersCaptureRequest("ORDER-ID");
-        
-        try {
-            // Call API with your client and get a response for your call
-            HttpResponse<Order> response = Credentials.client.execute(request);  
-            
-            // If call returns body in response, you can get the deserialized version by calling result() on the response
-            Order order = response.result();
-        } catch (IOException ioe) {
-            if (ioe instanceof HttpException) {
-              // Something went wrong server-side
-            HttpException he = (HttpException) ioe;
-            int statusCode = he.getStatusCode();
-            String debugId = he.getMessage().get("debug_id");
-            } else {
-            // Something went wrong client-side
-            }
-        }
-    }
+	public static void main(String[] args) {
+		Order order = null;
+		OrdersCaptureRequest request = new OrdersCaptureRequest("APPROVED-ORDER-ID");
+
+		try {
+			// Call API with your client and get a response for your call
+			HttpResponse<Order> response = Credentials.client.execute(request);
+
+			// If call returns body in response, you can get the de-serialized version by
+			// calling result() on the response
+			order = response.result();
+			System.out.println("Capture ID: " + order.purchaseUnits().get(0).payments().captures().get(0).id());
+			order.purchaseUnits().get(0).payments().captures().get(0).links()
+					.forEach(link -> System.out.println(link.rel() + " => " + link.method() + ":" + link.href()));
+		} catch (IOException ioe) {
+			if (ioe instanceof HttpException) {
+				// Something went wrong server-side
+				HttpException he = (HttpException) ioe;
+				System.out.println(he.getMessage());
+				he.headers().forEach(x -> System.out.println(x + " :" + he.headers().header(x)));
+			} else {
+				// Something went wrong client-side
+			}
+		}
+	}
 }
 ```
 ## Running tests
@@ -125,10 +140,10 @@ $ PAYPAL_CLIENT_ID=your_client_id PAYPAL_CLIENT_SECRET=your_client_secret ./grad
 You may use the client id and secret above for demonstration purposes.
 
 
-*NOTE*: This SDK is still in beta, is subject to change, and should not be used in production.
-
 ## Samples
 
 You can start off by trying out [creating and capturing an order](/checkout-sdk-sample/src/main/java/com/paypal/CaptureIntentExamples/RunAll.java).
 
 To try out different samples for both create and authorize intent head to [this link](/checkout-sdk-sample/src/main/java/com/paypal).
+
+Note: Update the `PayPalClient.java` with your sandbox client credentials or pass your client credentials as environment variable whie executing the samples.
