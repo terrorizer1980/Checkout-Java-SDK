@@ -97,7 +97,7 @@ buildscript {
                 licenses {
                     license {
                         name 'PayPal SDK License'
-                        url 'https://github.com/paypal/Checkout-Java-SDK'
+                        url 'https://github.com/paypal/Checkout-Java-SDK/blob/master/LICENSE'
                         distribution 'repo'
                     }
                 }
