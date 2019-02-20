@@ -149,3 +149,6 @@ You can start off by trying out [creating and capturing an order](/checkout-sdk-
 To try out different samples for both create and authorize intent head to [this link](/checkout-sdk-sample/src/main/java/com/paypal).
 
 Note: Update the `PayPalClient.java` with your sandbox client credentials or pass your client credentials as environment variable whie executing the samples.
+
+## License
+Code released under [SDK LICENSE](LICENSE)  
