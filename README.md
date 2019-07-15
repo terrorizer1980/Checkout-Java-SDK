@@ -17,9 +17,9 @@ An environment which supports TLS 1.2 (see the TLS-update site for more informat
 ## Usage
 ### Binaries
 
-It is not mandatory to fork this repository for using the PayPal SDK. You can refer [PayPal Checkout Server SDK](https://developer.paypal.com/docs/checkout/reference/server-integration) for configuring and working with SDK without forking this code.
+It is not necessary to fork this repository for using the PayPal SDK. Please take a look at [PayPal Checkout Server SDK](https://developer.paypal.com/docs/checkout/reference/server-integration) for configuring and working with SDK without forking this code.
 
-For contirbuting or referrring the samples, You can fork/refer this repository. 
+For contributing to this repository or using the samples you can fork this repository.
 
 ### Setting up credentials
 
@@ -148,4 +148,7 @@ You can start off by trying out [creating and capturing an order](/checkout-sdk-
 
 To try out different samples for both create and authorize intent head to [this link](/checkout-sdk-sample/src/main/java/com/paypal).
 
-Note: Update the `PayPalClient.java` with your sandbox client credentials or pass your client credentials as environment variable whie executing the samples.
+Note: Update the `PayPalClient.java` with your sandbox client credentials or pass your client credentials as environment variable while executing the samples.
+
+## License
+Code released under [SDK LICENSE](LICENSE)  

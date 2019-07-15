@@ -8,7 +8,7 @@ buildscript {
      apply plugin: 'java'
 
      group 'com.paypal.sdk'
-     version '1.0.0'
+     version '1.0.1'
      
      sourceCompatibility = 1.8
      targetCompatibility = 1.8
@@ -84,7 +84,7 @@ buildscript {
                 name 'checkout-sdk'
                 groupId  'com.paypal.sdk'
                 artifactId 'checkout-sdk'
-                version '1.0.0'
+                version '1.0.1'
                 packaging 'jar'
                 description 'PayPal SDK for integrating with the Checkout REST APIs'
                 url 'https://github.com/paypal/Checkout-Java-SDK.git'
@@ -97,7 +97,7 @@ buildscript {
                 licenses {
                     license {
                         name 'PayPal SDK License'
-                        url 'https://github.com/paypal/Checkout-Java-SDK'
+                        url 'https://github.com/paypal/Checkout-Java-SDK/blob/master/LICENSE'
                         distribution 'repo'
                     }
                 }

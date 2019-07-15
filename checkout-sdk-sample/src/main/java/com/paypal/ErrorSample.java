@@ -34,9 +34,9 @@ public class ErrorSample extends PayPalClient {
     public void createError2() {
         OrdersCreateRequest request = new OrdersCreateRequest();
         request.requestBody(new OrderRequest()
-                .intent("INVALID")
+                .checkoutPaymentIntent("INVALID")
                 .purchaseUnits(new ArrayList<PurchaseUnitRequest>() {{
-                    add(new PurchaseUnitRequest().amount(new AmountWithBreakdown().currencyCode("USD").value("100.00")));
+                    add(new PurchaseUnitRequest().amountWithBreakdown(new AmountWithBreakdown().currencyCode("USD").value("100.00")));
                 }}));
         System.out.println("Request Body:");
         System.out.println("{\n\"intent\": \"INVALID\",\n\"purchase_units\": [\n{\n\"amount\": {\n\"currency_code\": \"USD\",\n\"value\": \"100.00\"\n}\n}\n]\n}\n");

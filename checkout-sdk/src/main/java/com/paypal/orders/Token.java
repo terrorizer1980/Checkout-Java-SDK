@@ -1,8 +1,8 @@
-// This class was generated on Tue, 04 Sep 2018 12:15:13 PDT by version 0.1.0-dev+904328-dirty of Braintree SDK Generator
+// This class was generated on Thu, 16 May 2019 09:53:44 PDT by version 0.1.0-dev+8fcb5f of Braintree SDK Generator
 // Token.java
-// @version 0.1.0-dev+904328-dirty
+// @version 0.1.0-dev+8fcb5f
 // @type object
-// @data H4sIAAAAAAAC/6yQTUsEMQyG7/6KkHMVz3MT5rIIOsjiRTzEbWan2GnHNEWq7H+Xrs76MYgIe8zzEvK8ecV1mRgbXMdHDmjwlsTRg+crGitGg5dcPoeW00bcpC6GujQwaF10L2xhojJyUEgxy6YG0OdggebgDA1eiFB5P3lu8IbJXgdfsOnJJ67gKTthewCdxIlFHSds7g6yScWF7dLW2W+++3Fp3FHpyJ9uObCQsoVVC30U0LnNv0RV8g/PkL3fmT9ltcZfdT/Ary+mimBkHaIFHUjhmRLkxLb+eq6zr7Fqj9HhfnfyBgAA//8=
+// @data H4sIAAAAAAAC/6zQwUoDMRCA4btPMcw5iue9CXspgi5SvIiHsZntBrNJnEwOUfruktrWahERPOafQL7JGy5rYuxQ4zMHNHhP4ujJ8w3Nx/ma666gwZ7zSlxSFwN2uJwYttfcK1tIVGcOCjkWWbUBjCVYoP3gAg1eiVD9ePfS4B2TvQ2+YjeSz9zCS3HC9hAGiYlFHWfsHg7irOLC+pTs7Bfv9ngqHqgO5M/XHFhI2cKihzEK6H6bP0FVyjdnKN5vzK9YbeNj7i78+MXUEsysU7SgEyl8rtDsi/4/4I+bs3cAAAD//w==
 // DO NOT EDIT
 package com.paypal.orders;
 
@@ -36,7 +36,7 @@ public class Token {
 
 	/**
 	* REQUIRED
-	* The tokenization method that was used to generate the ID.
+	* The tokenization method that generated the ID.
 	*/
 	@SerializedName("type")
 	private String type;

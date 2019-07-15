@@ -30,7 +30,7 @@ public class PatchOrder extends PayPalClient {
 		patches.add(new Patch().op("replace").path("/intent").value("CAPTURE"));
 		patches.add(new Patch().op("replace").path("/purchase_units/@reference_id=='PUHF'/amount")
 				.value(new AmountWithBreakdown().currencyCode("USD").value("200.00")
-						.breakdown(new AmountBreakdown().itemTotal(new Money().currencyCode("USD").value("180.00"))
+						.amountBreakdown(new AmountBreakdown().itemTotal(new Money().currencyCode("USD").value("180.00"))
 								.taxTotal(new Money().currencyCode("USD").value("20.00")))));
 		return patches;
 	}
@@ -48,13 +48,13 @@ public class PatchOrder extends PayPalClient {
 		HttpResponse<Order> response = client.execute(getRequest);
 		System.out.println("After Patch:");
 		System.out.println("Order ID: " + response.result().id());
-		System.out.println("Intent: " + response.result().intent());
+		System.out.println("Intent: " + response.result().checkoutPaymentIntent());
 		System.out.println("Links: ");
 		for (LinkDescription link : response.result().links()) {
 			System.out.println("\t" + link.rel() + ": " + link.href() + "\tCall Type: " + link.method());
 		}
-		System.out.println("Gross Amount: " + response.result().purchaseUnits().get(0).amount().currencyCode() + " "
-				+ response.result().purchaseUnits().get(0).amount().value());
+		System.out.println("Gross Amount: " + response.result().purchaseUnits().get(0).amountWithBreakdown().currencyCode() + " "
+				+ response.result().purchaseUnits().get(0).amountWithBreakdown().value());
 		System.out.println("Full response body:");
 		System.out.println(new JSONObject(new Json().serialize(response.result())).toString(4));
 	}

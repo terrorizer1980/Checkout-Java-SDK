@@ -58,7 +58,7 @@ public class CaptureOrder extends PayPalClient {
 	 */
 	public static void main(String[] args) {
 		try {
-			new CaptureOrder().captureOrder("4TE71927R64954031", true);
+			new CaptureOrder().captureOrder("<<REPLACE-WITH-VALID-AUTHORIZATION-ID>>", true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
