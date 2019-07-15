@@ -21,7 +21,7 @@ import com.paypal.orders.Order;
 import com.paypal.orders.OrderRequest;
 import com.paypal.orders.OrdersCreateRequest;
 import com.paypal.orders.PurchaseUnitRequest;
-import com.paypal.orders.ShippingDetails;
+import com.paypal.orders.ShippingDetail;
 
 public class CreateOrder extends PayPalClient {
 
@@ -32,7 +32,7 @@ public class CreateOrder extends PayPalClient {
 	 */
 	private OrderRequest buildRequestBody() {
 		OrderRequest orderRequest = new OrderRequest();
-		orderRequest.intent("CAPTURE");
+		orderRequest.checkoutPaymentIntent("CAPTURE");
 
 		ApplicationContext applicationContext = new ApplicationContext().brandName("EXAMPLE INC").landingPage("BILLING")
 				.cancelUrl("https://www.example.com").returnUrl("https://www.example.com").userAction("CONTINUE")
@@ -42,8 +42,8 @@ public class CreateOrder extends PayPalClient {
 		List<PurchaseUnitRequest> purchaseUnitRequests = new ArrayList<PurchaseUnitRequest>();
 		PurchaseUnitRequest purchaseUnitRequest = new PurchaseUnitRequest().referenceId("PUHF")
 				.description("Sporting Goods").customId("CUST-HighFashions").softDescriptor("HighFashions")
-				.amount(new AmountWithBreakdown().currencyCode("USD").value("220.00")
-						.breakdown(new AmountBreakdown().itemTotal(new Money().currencyCode("USD").value("180.00"))
+				.amountWithBreakdown(new AmountWithBreakdown().currencyCode("USD").value("220.00")
+						.amountBreakdown(new AmountBreakdown().itemTotal(new Money().currencyCode("USD").value("180.00"))
 								.shipping(new Money().currencyCode("USD").value("20.00"))
 								.handling(new Money().currencyCode("USD").value("10.00"))
 								.taxTotal(new Money().currencyCode("USD").value("20.00"))
@@ -60,7 +60,7 @@ public class CreateOrder extends PayPalClient {
 								.category("PHYSICAL_GOODS"));
 					}
 				})
-				.shipping(new ShippingDetails().name(new Name().fullName("John Doe"))
+				.shippingDetail(new ShippingDetail().name(new Name().fullName("John Doe"))
 						.addressPortable(new AddressPortable().addressLine1("123 Townsend St").addressLine2("Floor 6")
 								.adminArea2("San Francisco").adminArea1("CA").postalCode("94107").countryCode("US")));
 		purchaseUnitRequests.add(purchaseUnitRequest);
@@ -85,13 +85,13 @@ public class CreateOrder extends PayPalClient {
 				System.out.println("Status Code: " + response.statusCode());
 				System.out.println("Status: " + response.result().status());
 				System.out.println("Order ID: " + response.result().id());
-				System.out.println("Intent: " + response.result().intent());
+				System.out.println("Intent: " + response.result().checkoutPaymentIntent());
 				System.out.println("Links: ");
 				for (LinkDescription link : response.result().links()) {
 					System.out.println("\t" + link.rel() + ": " + link.href() + "\tCall Type: " + link.method());
 				}
-				System.out.println("Total Amount: " + response.result().purchaseUnits().get(0).amount().currencyCode()
-						+ " " + response.result().purchaseUnits().get(0).amount().value());
+				System.out.println("Total Amount: " + response.result().purchaseUnits().get(0).amountWithBreakdown().currencyCode()
+						+ " " + response.result().purchaseUnits().get(0).amountWithBreakdown().value());
 				System.out.println("Full response body:");
 				System.out.println(new JSONObject(new Json().serialize(response.result())).toString(4));
 			}

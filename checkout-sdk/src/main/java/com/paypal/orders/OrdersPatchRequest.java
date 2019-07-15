@@ -1,8 +1,8 @@
-// This class was generated on Tue, 04 Sep 2018 12:15:14 PDT by version 0.1.0-dev+904328-dirty of Braintree SDK Generator
+// This class was generated on Thu, 16 May 2019 09:53:44 PDT by version 0.1.0-dev+8fcb5f of Braintree SDK Generator
 // OrdersPatchRequest.java
-// @version 0.1.0-dev+904328-dirty
+// @version 0.1.0-dev+8fcb5f
 // @type request
-// @data H4sIAAAAAAAC/9RXTW/jNhC991cQcxasYFv0YKAHw0mRfuzaTdwFisSwJ+I44q6kYclhtkaQ/15QlJLINnY3bYI2N/txyHlPMxo93sI7rAnGwE6T8yOLUpSQwTH5whkrhhsYw+9Wo5BX2Kg2TkmJokr0SkpS6+nZyWRxcrxW7NR6Mp+fzd7Hf15Qgh+pPzioApuGRYX2oIdzPhkp1Xo6ezv/9WRxYI9q+cQsnhSKOHMVEhGt+OoDFeLHl+Ho6NtC8Kqi9id1QEmoB4AbLiuszHXzwyVUtJFLSIuTPkfUkjKk+FzKr9g+s+QwPjR/cFc+5JDvc7xivf0M6UFwwbpTbBqhpif6APdZhin0QeZnZCssDm/Zof11nGxwRYmeVqEx4p+DW6ZQ65cieLEcFcEL1yujn41sphzVfEMvSFo/vKivibbFLdGIajTVa2gNXxprTXP9mh6x542s+vZg95qoY83h/z3PLpYj09ywKei/mhf53rcif/QNhAx+C+S2c3RYk5DzML5YZnBKqMntoj+yq3exOUo5wG5hsbXRKnhxprmGDN6jMzHlYwuxMhoy+IW2HbjnJRYlqZ+OFW9a79DZCe6cwQgymDiH25TqKIMzQj1rqi2MN1h5isCfwTjSMBYXKIO5Y0tODHkYN6Gq7pYphrykQ+55zztvs0O7tRgrl7YMuO+uDIVMGoWRapTy8/nsXedVOlsSNaG11VZZdGKw6hS2C448B1eQ39H7/Wf1dsBjwV8uysZxPRDVAftFSRo4eom2IrE8gu6aRGkuQk2NqIqL1t6oeIr6VJpozljFnm3jb7AKNFI9Z7VhlyxijFgr7u3Rk+p8QHdb6OzLHWkH0tu/+8LvWUUpBde2oid24j9naFHK3Z4r/315UB6K0ytK79sLVSB1/b6+tiEGAntkX2G7cv/ejFTE1mkgPmodpZm8ipcJl/gp7NruORQt72KUt9x4SudEOIMptxa7UxsJmvSo8w+eG8jgVMS+JSlZx0kzWUxPIc1QGEN+8yYvSio+cpA8XbTy235a3kEG5x+Nved08pelQkift1ehKWuC8Zuj7+6++RsAAP//
+// @data H4sIAAAAAAAC/8xY32/bNhB+319x4EtfFCvthgLzUGBumqHZ1sRLvAJDE9g0eY7YSDyVPKbzgvzvAykpseVkTdDM21Mi/rj77rvj8aOvxKGsUAwFOY3OD2rJqhCZeINeOVOzISuG4vdaS0YP0kJaB58NF8AFwmzveH802X8zA3IwG43Hx0fv45dnycEPTsPu7rdq7vL0D/5BAZS0lhhCMnmnxaN341/3J/dbmRBU8iLtbaxksKQAVfAMtaNLoxEkzBwu0KFVODV61rdxsEh7qDK8sRYW5HrAyCLUwalCeoRgDWcwlsuxLEHjQoaSPTBtGqIFzJ7PMvhcGFUAWjkv0SfHTBB8hFlLLoYNuNphA+5UxNFTMYRTkXdup9Gtz39c9fDq1bPnz/IryezMPDDukNuh+UdUfH0qGqP5jdV7kgEp5ZH6iKezFHOtobGVYlNU1SUytgupRidjdfgWfChb7OmrNKtfinSLwVhGyy2y22GIf168rLT0xQ/gsC6l6vDm67bus7xO08M8ZCC1/ho3H84GKnimamr0I1xm4LCiS/xK1/r2jG7feS2XiAOspCm3R7YvTF0be779cDvPAysr3H7AA6m1Q7/Fuva04GlXYeS2z7isKGyjVXw4Gxh7SSY11P/kHFVoeWqsZxfUww/z0/sdaOPnwXlME1W396FI5iWpi0+BGFcheHbUHlg8JMb2ushXx+H1srtHM+gjfwAo4zd2HRyeTEaHk421HWt3g31KMutS8oJcNV0g+ierq7y7Z0UmfgvolmPpZIWMzovhh7NMvEWp0a2NXonJso4az7Mz9lxk4r10JmqRVvuNAhfkzF/pQheZ+AWX98ysy8JOiB3vn0xgND4AJcvSZ2CsKoNOUgHmKB06YLpAC8YCF8ZDkUCuaL7XadUMZOACLRuVHIJXBVY4gEmBcCnLkFLdLm5TPlIKvd+ZRPsNM40UfS29UV1ZlCZlRw89KofcrhuITIyck8uGnt1MHKPUR7ZciuFClh7jwKdgHGoxZBcwE2MXhQ8b9GJoQ1leZ18kd4+S5tlJy1a57U30qC0QKtRGAi9rHEAHJGnTW/HVUCjB4aeAnmFOetmnS9Z12RLaKD8Vy1J2LER1ig5h1ozO0p6PnuyT8HOWiZ/IVf0qHUsuHlejSYxPjV6j8E7aDt5E3R3LqhHwUWqnZ8ITxXPccN0YucE9bh9OPdhJXE/b9Kxh78+sBzKyICPUGMrPJ0eHrUpfEeQxrUuopWMjyzbCNOHQU3AKfS/el/8YbzuwGvCXk7JwVK0F1Q5sJqUpPAmFw8WrU1Ew136Y50xU+oFBXgzInecFV2XuFurl97vP2wcMpujHFF8OnQqRbQ9lSmlm6c6RQZMKsQtDSW37iGjatxcTxKaa1qej0TtSfIPxtkfHDZuN++bwPaqc7qD3gf2D6jWG0+cmv9tGFR+o/XIu/j+Zl3yb99WX67/GU3MwN3lKtbZGVDeyyVTTsruj3bTxfk26L1UlaEIPljjdCcYhyLbgnyLgs+u4ytdkPTZ24nDW3WUtGas3TrxJRCbeMtfvkAvSsVeOJntvRXMLiKHIL1/kqkB1QYHz5neo/Krr99ciEycXpr7BtP9njYpRn6TfhvZIoxi+2P3u+pu/AQAA//8=
 // DO NOT EDIT
 package com.paypal.orders;
 
@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 /**
- * Updates an order that has the `CREATED` or `APPROVED` status. You cannot update an order with `COMPLETED` status. You can patch these attributes and objects:<table><thead><tr><th align="left">Attribute or object</th><th align="left">Operations</th></tr></thead><tbody><tr><td><code>intent</code></td><td align="left">Replace</td></tr><tr><td><code>purchase_units</code></td><td align="left">Replace, add</td></tr><tr><td><code>purchase_units[].custom_id</code></td><td align="left">Replace, add, remove</td></tr><tr><td><code>purchase_units[].description</code></td><td align="left">Replace, add, remove</td></tr><tr><td><code>purchase_units[].payee.email</code></td><td align="left">Replace, add</td></tr><tr><td><code>purchase_units[].shipping</code></td><td align="left">Replace, add, remove</td></tr><tr><td><code>purchase_units[].soft_descriptor</code></td><td align="left">Replace, add, remove</td></tr><tr><td><code>purchase_units[].amount</code></td><td align="left">Replace</td></tr><tr><td><code>purchase_units[].invoice_id</code></td><td align="left">Replace, add, remove</td></tr></tbody></table>
+ * Updates an order with the `CREATED` or `APPROVED` status.<br/>You cannot update an order with the `COMPLETED` status.<br/>To make an update, you must provide a `reference_id`.<br/>If you omit a `reference_id` for an order with one purchase unit, PayPal defaults to a `reference_id` of `1`, which enables you to use a path:<pre>"path": "/purchase_units/@reference_id=='1'/{attribute-or-object}"</pre>.<br/>You can patch these attributes and objects to complete these operations:<ul><li><code>intent</code> &mdash; replace.</li><li><code>purchase_units</code> &mdash; replace, add.</li><li><code>purchase_units[].custom_id</code> &mdash; replace, add, remove.</li><li><code>purchase_units[].description</code> &mdash; replace, add, remove.</li><li><code>purchase_units[].payee.email</code> &mdash; replace, add.</li><li><code>purchase_units[].shipping</code> &mdash; replace, add, remove.</li><li><code>purchase_units[].shipping.name</code> &mdash; replace, add.</li><li><code>purchase_units[].shipping.address</code> &mdash; replace, add.</li><li><code>purchase_units[].soft_descriptor</code> &mdash; replace, add, remove.</li><li><code>purchase_units[].amount</code> &mdash; replace.</li><li><code>purchase_units[].invoice_id</code> &mdash; replace, add, remove.</li><li><code>purchase_units[].payment_instruction</code> &mdash; replace.</li><li><code>purchase_units[].payment_instruction.disbursement_mode</code> &mdash; replace.<blockquote><strong>Note:</strong> By default, <code>disbursement_mode</code> is <code>INSTANT</code>.</blockquote></li><li><code>purchase_units[].payment_instruction.platform_fees</code> &mdash; replace, add, remove.</li></ul>
  */
 public class OrdersPatchRequest extends HttpRequest<Void> {
 
@@ -24,6 +24,16 @@ public class OrdersPatchRequest extends HttpRequest<Void> {
         
         header("Content-Type", "application/json");
     }
+    public OrdersPatchRequest authorization(String authorization) {
+        header("Authorization", String.valueOf(authorization));
+        return this;
+    }
+    
+    public OrdersPatchRequest contentType(String contentType) {
+        header("Content-Type", String.valueOf(contentType));
+        return this;
+    }
+    
     
 
     public OrdersPatchRequest requestBody(List<Patch> patchRequest) {

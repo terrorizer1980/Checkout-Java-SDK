@@ -52,7 +52,7 @@ public class RunAll {
             System.out.println("Refunding Order...");
             HttpResponse<Refund> refundResponse = new RefundOrder().refundOrder(captureId, false);
             if (refundResponse.statusCode() == 201){
-                System.out.println("Refudned Successfully");
+                System.out.println("Refunded Successfully");
                 System.out.println("Status Code: " + refundResponse.statusCode());
                 System.out.println("Status: " + refundResponse.result().status());
                 System.out.println("Refund ID: " + refundResponse.result().id());

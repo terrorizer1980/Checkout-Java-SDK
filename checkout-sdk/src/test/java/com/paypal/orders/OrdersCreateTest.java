@@ -19,11 +19,11 @@ public class OrdersCreateTest extends TestHarness {
 
     public static OrderRequest buildRequestBody() throws IOException {
         return new OrderRequest()
-                .intent("CAPTURE")
+                .checkoutPaymentIntent("CAPTURE")
                 .purchaseUnits(new ArrayList<PurchaseUnitRequest>(){{
                     add(new PurchaseUnitRequest()
                             .referenceId("test_ref_id1")
-                            .amount(new AmountWithBreakdown()
+                            .amountWithBreakdown(new AmountWithBreakdown()
                                     .currencyCode("USD")
                                     .value("100.00")));
                 }});
@@ -47,14 +47,14 @@ public class OrdersCreateTest extends TestHarness {
 
         assertNotNull(createdOrder.id());
 
-        assertEquals(createdOrder.intent(), "CAPTURE");
+        assertEquals(createdOrder.checkoutPaymentIntent(), "CAPTURE");
 
         assertNotNull(createdOrder.purchaseUnits());
         assertEquals(createdOrder.purchaseUnits().size(), 1);
         PurchaseUnit firstPurchaseUnit = createdOrder.purchaseUnits().get(0);
         assertEquals(firstPurchaseUnit.referenceId(), "test_ref_id1");
-        assertEquals(firstPurchaseUnit.amount().currencyCode(), "USD");
-        assertEquals(firstPurchaseUnit.amount().value(), "100.00");
+        assertEquals(firstPurchaseUnit.amountWithBreakdown().currencyCode(), "USD");
+        assertEquals(firstPurchaseUnit.amountWithBreakdown().value(), "100.00");
 
         assertNotNull(createdOrder.createTime());
 
