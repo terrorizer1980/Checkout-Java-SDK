@@ -109,19 +109,6 @@ public class LinkSchema {
 	    return this;
 	}
 
-//	/**
-//	* An array of links.
-//	*/
-//	@SerializedName(value = "links", listClass = Link.class)
-//	private List<Link> links;
-//
-//	public List<Link> links() { return links; }
-//
-//	public LinkSchema links(List<Link> links) {
-//	    this.links = links;
-//	    return this;
-//	}
-
 	/**
 	* The media type and context-encoding scheme.
 	*/
@@ -146,19 +133,6 @@ public class LinkSchema {
 	    this.not = not;
 	    return this;
 	}
-
-//	/**
-//	* An array of sub-schemas. The data must validate against one sub-schema.
-//	*/
-//	@SerializedName(value = "oneOf", listClass = OneOfItem.class)
-//	private List<OneOfItem> oneOf;
-//
-//	public List<OneOfItem> oneOf() { return oneOf; }
-//
-//	public LinkSchema oneOf(List<OneOfItem> oneOf) {
-//	    this.oneOf = oneOf;
-//	    return this;
-//	}
 
 	/**
 	* To apply this schema to the instances' URIs, start the URIs with this value.

@@ -149,17 +149,4 @@ public class PurchaseUnitRequest {
 	    this.softDescriptor = softDescriptor;
 	    return this;
 	}
-
-	/**
-	* The supplementary data.
-	*/
-	@SerializedName("supplementary_data")
-	private SupplementaryData supplementaryData;
-
-	public SupplementaryData supplementaryData() { return supplementaryData; }
-	
-	public PurchaseUnitRequest supplementaryData(SupplementaryData supplementaryData) {
-	    this.supplementaryData = supplementaryData;
-	    return this;
-	}
 }

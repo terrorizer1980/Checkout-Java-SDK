@@ -47,19 +47,6 @@ public class ApplicationContext {
 	}
 
 	/**
-	* Client configuration that captures the product flows and specific experiences that a user completes a paypal transaction.
-	*/
-	@SerializedName("client_configuration")
-	private ClientConfiguration clientConfiguration;
-
-	public ClientConfiguration clientConfiguration() { return clientConfiguration; }
-	
-	public ApplicationContext clientConfiguration(ClientConfiguration clientConfiguration) {
-	    this.clientConfiguration = clientConfiguration;
-	    return this;
-	}
-
-	/**
 	* The type of landing page to show on the PayPal site for customer checkout.
 	*/
 	@SerializedName("landing_page")

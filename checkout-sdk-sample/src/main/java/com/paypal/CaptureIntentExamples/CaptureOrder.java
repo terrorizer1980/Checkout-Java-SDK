@@ -51,8 +51,7 @@ public class CaptureOrder extends PayPalClient {
 			System.out.println("Buyer: ");
 			Payer buyer = response.result().payer();
 			System.out.println("\tEmail Address: " + buyer.email());
-			System.out.println("\tName: " + buyer.name().fullName());
-			System.out.println("\tPhone Number: " + buyer.phoneWithType().phoneNumber().nationalNumber());
+			System.out.println("\tName: " + buyer.name().givenName() + " " + buyer.name().surname());
 			System.out.println("Full response body:");
 			System.out.println(new JSONObject(new Json().serialize(response.result())).toString(4));
 		}

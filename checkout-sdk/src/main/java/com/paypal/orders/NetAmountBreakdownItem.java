@@ -34,19 +34,6 @@ public class NetAmountBreakdownItem {
 	}
 
 	/**
-	* The exchange rate that determines the amount to convert from one currency to another currency.
-	*/
-	@SerializedName("exchange_rate")
-	private ExchangeRate exchangeRate;
-
-	public ExchangeRate exchangeRate() { return exchangeRate; }
-	
-	public NetAmountBreakdownItem exchangeRate(ExchangeRate exchangeRate) {
-	    this.exchangeRate = exchangeRate;
-	    return this;
-	}
-
-	/**
 	* The currency and amount for a financial transaction, such as a balance or payment due.
 	*/
 	@SerializedName("payable_amount")

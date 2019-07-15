@@ -47,19 +47,6 @@ public class Order {
 	}
 
 	/**
-	* The details about the payer-selected credit financing offer.
-	*/
-	@SerializedName("credit_financing_offer")
-	private CreditFinancingOffer creditFinancingOffer;
-
-	public CreditFinancingOffer creditFinancingOffer() { return creditFinancingOffer; }
-	
-	public Order creditFinancingOffer(CreditFinancingOffer creditFinancingOffer) {
-	    this.creditFinancingOffer = creditFinancingOffer;
-	    return this;
-	}
-
-	/**
 	* The date and time, in [Internet date and time format](https://tools.ietf.org/html/rfc3339#section-5.6). Seconds are required while fractional seconds are optional.<blockquote><strong>Note:</strong> The regular expression provides guidance but does not reject all invalid dates.</blockquote>
 	*/
 	@SerializedName("expiration_time")
