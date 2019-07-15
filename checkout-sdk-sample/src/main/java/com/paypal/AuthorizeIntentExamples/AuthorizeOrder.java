@@ -2,31 +2,28 @@ package com.paypal.AuthorizeIntentExamples;
 
 import java.io.IOException;
 
+import com.paypal.orders.*;
 import org.json.JSONObject;
 
 import com.braintreepayments.http.HttpResponse;
 import com.braintreepayments.http.serializer.Json;
 import com.paypal.PayPalClient;
-import com.paypal.orders.LinkDescription;
-import com.paypal.orders.Order;
-import com.paypal.orders.OrderActionRequest;
-import com.paypal.orders.OrdersAuthorizeRequest;
 
 public class AuthorizeOrder extends PayPalClient {
 
 	/**
 	 * Building empty request body. This can be updated with required fields as per
 	 * need.
-	 * 
+	 *
 	 * @return OrderActionRequest with empty body
 	 */
-	private OrderActionRequest buildRequestBody() {
-		return new OrderActionRequest();
+	private OrderRequest buildRequestBody() {
+		return new OrderRequest();
 	}
 
 	/**
 	 * Method to authorize order after creation
-	 * 
+	 *
 	 * @param orderId Valid Approved Order ID from createOrder response
 	 * @param debug   true = print response data
 	 * @return HttpResponse<Order> response received from API
@@ -53,12 +50,12 @@ public class AuthorizeOrder extends PayPalClient {
 	/**
 	 * This is the driver function which invokes the authorizeOrder function to
 	 * create an sample order.
-	 * 
+	 *
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		try {
-			new AuthorizeOrder().authorizeOrder("7HA75945773554815", true);
+			new AuthorizeOrder().authorizeOrder("<<REPLACE-WITH-APPROVED-ORDER-ID>>", true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

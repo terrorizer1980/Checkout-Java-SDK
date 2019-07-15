@@ -2,18 +2,12 @@ package com.paypal.CaptureIntentExamples;
 
 import java.io.IOException;
 
+import com.paypal.orders.*;
 import org.json.JSONObject;
 
 import com.braintreepayments.http.HttpResponse;
 import com.braintreepayments.http.serializer.Json;
 import com.paypal.PayPalClient;
-import com.paypal.orders.Capture;
-import com.paypal.orders.Customer;
-import com.paypal.orders.LinkDescription;
-import com.paypal.orders.Order;
-import com.paypal.orders.OrderRequest;
-import com.paypal.orders.OrdersCaptureRequest;
-import com.paypal.orders.PurchaseUnit;
 
 public class CaptureOrder extends PayPalClient {
 
@@ -31,9 +25,9 @@ public class CaptureOrder extends PayPalClient {
 	 * Method to capture order after creation. Valid approved order Id should be
 	 * passed an argument to this method.
 	 * 
-	 * @param orderId Authorization ID from authorizeOrder response
+	 * @param orderId Order ID from createOrder response
 	 * @param debug   true = print response data
-	 * @return HttpResponse<Capture> response received from API
+	 * @return HttpResponse<Order> response received from API
 	 * @throws IOException Exceptions from API if any
 	 */
 	public HttpResponse<Order> captureOrder(String orderId, boolean debug) throws IOException {
@@ -55,10 +49,10 @@ public class CaptureOrder extends PayPalClient {
 				}
 			}
 			System.out.println("Buyer: ");
-			Customer buyer = response.result().payer();
-			System.out.println("\tEmail Address: " + buyer.emailAddress());
+			Payer buyer = response.result().payer();
+			System.out.println("\tEmail Address: " + buyer.email());
 			System.out.println("\tName: " + buyer.name().fullName());
-			System.out.println("\tPhone Number: " + buyer.phone().countryCode() + buyer.phone().nationalNumber());
+			System.out.println("\tPhone Number: " + buyer.phoneWithType().phoneNumber().nationalNumber());
 			System.out.println("Full response body:");
 			System.out.println(new JSONObject(new Json().serialize(response.result())).toString(4));
 		}
@@ -73,7 +67,7 @@ public class CaptureOrder extends PayPalClient {
 	 */
 	public static void main(String[] args) {
 		try {
-			new CaptureOrder().captureOrder("2KB80915Y4850741U", true);
+			new CaptureOrder().captureOrder("<<REPLACE-WITH-APPROVED-ORDER-ID>>", true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -121,19 +121,6 @@ public class LinkSchema {
 //	}
 
 	/**
-	* The media type and context-encoding scheme.
-	*/
-	@SerializedName("media")
-	private Media media;
-
-	public Media media() { return media; }
-	
-	public LinkSchema media(Media media) {
-	    this.media = media;
-	    return this;
-	}
-
-	/**
 	*/
 	@SerializedName("not")
 	private Object not;

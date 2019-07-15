@@ -66,7 +66,7 @@ public class RefundOrder extends PayPalClient {
 	 */
 	public static void main(String[] args) {
 		try {
-			new RefundOrder().refundOrder("<<PASTE-VALID-CAPTURE-ID-HERE>>", true);
+			new RefundOrder().refundOrder("<<REPLACE-WITH-VALID-CAPTURE-ID>>", true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -49,14 +49,14 @@ public class OrdersPatchTest extends TestHarness {
 
         assertNotNull(order.id());
 
-        assertEquals(order.intent(), "CAPTURE");
+        assertEquals(order.checkoutPaymentIntent(), "CAPTURE");
 
         assertNotNull(order.purchaseUnits());
         assertEquals(order.purchaseUnits().size(), 1);
         PurchaseUnit firstPurchaseUnit = order.purchaseUnits().get(0);
         assertEquals(firstPurchaseUnit.referenceId(), "test_ref_id1");
-        assertEquals(firstPurchaseUnit.amount().currencyCode(), "USD");
-        assertEquals(firstPurchaseUnit.amount().value(), "200.00");
+        assertEquals(firstPurchaseUnit.amountWithBreakdown().currencyCode(), "USD");
+        assertEquals(firstPurchaseUnit.amountWithBreakdown().value(), "200.00");
         assertEquals(firstPurchaseUnit.description(), "added_description");
 
 
