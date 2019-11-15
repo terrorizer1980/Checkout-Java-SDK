@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The collection of payments, or transactions, for a purchase unit in an order. For example, authorized payments, captured payments, and refunds.
  */
@@ -27,7 +27,7 @@ public class PaymentCollection {
 	private List<Authorization> authorizations;
 
 	public List<Authorization> authorizations() { return authorizations; }
-	
+
 	public PaymentCollection authorizations(List<Authorization> authorizations) {
 	    this.authorizations = authorizations;
 	    return this;
@@ -40,7 +40,7 @@ public class PaymentCollection {
 	private List<Capture> captures;
 
 	public List<Capture> captures() { return captures; }
-	
+
 	public PaymentCollection captures(List<Capture> captures) {
 	    this.captures = captures;
 	    return this;
@@ -53,7 +53,7 @@ public class PaymentCollection {
 	private List<Refund> refunds;
 
 	public List<Refund> refunds() { return refunds; }
-	
+
 	public PaymentCollection refunds(List<Refund> refunds) {
 	    this.refunds = refunds;
 	    return this;

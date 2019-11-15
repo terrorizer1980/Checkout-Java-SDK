@@ -42,7 +42,7 @@ class UserAgent {
 		}
 
 		StringBuilder stringBuilder = new StringBuilder("PayPalSDK/"
-				+ "PayPal-Java-SDK" + " "  + " ");
+				+ "PayPal-Checkout-Java-SDK" + " "  + " ");
 		stringBuilder.append("(").append(javaVersion.toString());
 		if (osVersion.length() > 0) {
 			stringBuilder.append("; ").append(osVersion.toString());

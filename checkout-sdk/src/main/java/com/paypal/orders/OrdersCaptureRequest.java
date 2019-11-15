@@ -6,7 +6,7 @@
 // DO NOT EDIT
 package com.paypal.orders;
 
-import com.braintreepayments.http.*;
+import com.paypal.http.*;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.io.UnsupportedEncodingException;
@@ -21,40 +21,40 @@ public class OrdersCaptureRequest extends HttpRequest<Order> {
         try {
             path(path().replace("{order_id}", URLEncoder.encode(String.valueOf(orderId), "UTF-8")));
         } catch (UnsupportedEncodingException ignored) {}
-        
+
         header("Content-Type", "application/json");
     }
     public OrdersCaptureRequest authorization(String authorization) {
         header("Authorization", String.valueOf(authorization));
         return this;
     }
-    
+
     public OrdersCaptureRequest contentType(String contentType) {
         header("Content-Type", String.valueOf(contentType));
         return this;
     }
-    
+
     public OrdersCaptureRequest payPalAuthAssertion(String payPalAuthAssertion) {
         header("PayPal-Auth-Assertion", String.valueOf(payPalAuthAssertion));
         return this;
     }
-    
+
     public OrdersCaptureRequest payPalClientMetadataId(String payPalClientMetadataId) {
         header("PayPal-Client-Metadata-Id", String.valueOf(payPalClientMetadataId));
         return this;
     }
-    
+
     public OrdersCaptureRequest payPalRequestId(String payPalRequestId) {
         header("PayPal-Request-Id", String.valueOf(payPalRequestId));
         return this;
     }
-    
+
     public OrdersCaptureRequest prefer(String prefer) {
         header("Prefer", String.valueOf(prefer));
         return this;
     }
-    
-    
+
+
 
     public OrdersCaptureRequest requestBody(OrderCaptureRequest orderCaptureRequest) {
         super.requestBody(orderCaptureRequest);

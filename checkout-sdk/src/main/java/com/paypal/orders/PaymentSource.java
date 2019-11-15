@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The payment source definition.
  */
@@ -27,7 +27,7 @@ public class PaymentSource {
 	private Card card;
 
 	public Card card() { return card; }
-	
+
 	public PaymentSource card(Card card) {
 	    this.card = card;
 	    return this;
@@ -40,7 +40,7 @@ public class PaymentSource {
 	private Token token;
 
 	public Token token() { return token; }
-	
+
 	public PaymentSource token(Token token) {
 	    this.token = token;
 	    return this;

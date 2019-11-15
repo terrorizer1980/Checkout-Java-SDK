@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The order request details.
  */
@@ -27,7 +27,7 @@ public class OrderRequest {
 	private ApplicationContext applicationContext;
 
 	public ApplicationContext applicationContext() { return applicationContext; }
-	
+
 	public OrderRequest applicationContext(ApplicationContext applicationContext) {
 	    this.applicationContext = applicationContext;
 	    return this;
@@ -40,7 +40,7 @@ public class OrderRequest {
 	private String checkoutPaymentIntent;
 
 	public String checkoutPaymentIntent() { return checkoutPaymentIntent; }
-	
+
 	public OrderRequest checkoutPaymentIntent(String checkoutPaymentIntent) {
 	    this.checkoutPaymentIntent = checkoutPaymentIntent;
 	    return this;
@@ -53,7 +53,7 @@ public class OrderRequest {
 	private Payer payer;
 
 	public Payer payer() { return payer; }
-	
+
 	public OrderRequest payer(Payer payer) {
 	    this.payer = payer;
 	    return this;
@@ -66,7 +66,7 @@ public class OrderRequest {
 	private String processingInstruction;
 
 	public String processingInstruction() { return processingInstruction; }
-	
+
 	public OrderRequest processingInstruction(String processingInstruction) {
 	    this.processingInstruction = processingInstruction;
 	    return this;
@@ -80,7 +80,7 @@ public class OrderRequest {
 	private List<PurchaseUnitRequest> purchaseUnits;
 
 	public List<PurchaseUnitRequest> purchaseUnits() { return purchaseUnits; }
-	
+
 	public OrderRequest purchaseUnits(List<PurchaseUnitRequest> purchaseUnits) {
 	    this.purchaseUnits = purchaseUnits;
 	    return this;

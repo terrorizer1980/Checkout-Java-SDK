@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The shipping details.
  */
@@ -27,7 +27,7 @@ public class ShippingDetail {
 	private AddressPortable addressPortable;
 
 	public AddressPortable addressPortable() { return addressPortable; }
-	
+
 	public ShippingDetail addressPortable(AddressPortable addressPortable) {
 	    this.addressPortable = addressPortable;
 	    return this;
@@ -40,7 +40,7 @@ public class ShippingDetail {
 	private Name name;
 
 	public Name name() { return name; }
-	
+
 	public ShippingDetail name(Name name) {
 	    this.name = name;
 	    return this;
@@ -53,7 +53,7 @@ public class ShippingDetail {
 	private List<ShippingOption> options;
 
 	public List<ShippingOption> options() { return options; }
-	
+
 	public ShippingDetail options(List<ShippingOption> options) {
 	    this.options = options;
 	    return this;

@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The name of the party.
  */
@@ -27,7 +27,7 @@ public class Name {
 	private String alternateFullName;
 
 	public String alternateFullName() { return alternateFullName; }
-	
+
 	public Name alternateFullName(String alternateFullName) {
 	    this.alternateFullName = alternateFullName;
 	    return this;
@@ -40,7 +40,7 @@ public class Name {
 	private String fullName;
 
 	public String fullName() { return fullName; }
-	
+
 	public Name fullName(String fullName) {
 	    this.fullName = fullName;
 	    return this;
@@ -53,7 +53,7 @@ public class Name {
 	private String givenName;
 
 	public String givenName() { return givenName; }
-	
+
 	public Name givenName(String givenName) {
 	    this.givenName = givenName;
 	    return this;
@@ -66,7 +66,7 @@ public class Name {
 	private String middleName;
 
 	public String middleName() { return middleName; }
-	
+
 	public Name middleName(String middleName) {
 	    this.middleName = middleName;
 	    return this;
@@ -79,7 +79,7 @@ public class Name {
 	private String prefix;
 
 	public String prefix() { return prefix; }
-	
+
 	public Name prefix(String prefix) {
 	    this.prefix = prefix;
 	    return this;
@@ -92,7 +92,7 @@ public class Name {
 	private String suffix;
 
 	public String suffix() { return suffix; }
-	
+
 	public Name suffix(String suffix) {
 	    this.suffix = suffix;
 	    return this;
@@ -105,7 +105,7 @@ public class Name {
 	private String surname;
 
 	public String surname() { return surname; }
-	
+
 	public Name surname(String surname) {
 	    this.surname = surname;
 	    return this;

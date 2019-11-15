@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The portable international postal address. Maps to [AddressValidationMetadata](https://github.com/googlei18n/libaddressinput/wiki/AddressValidationMetadata) and HTML 5.1 [Autofilling form controls: the autocomplete attribute](https://www.w3.org/TR/html51/sec-forms.html#autofilling-form-controls-the-autocomplete-attribute).
  */
@@ -27,7 +27,7 @@ public class AddressPortable {
 	private String addressLine1;
 
 	public String addressLine1() { return addressLine1; }
-	
+
 	public AddressPortable addressLine1(String addressLine1) {
 	    this.addressLine1 = addressLine1;
 	    return this;
@@ -40,7 +40,7 @@ public class AddressPortable {
 	private String addressLine2;
 
 	public String addressLine2() { return addressLine2; }
-	
+
 	public AddressPortable addressLine2(String addressLine2) {
 	    this.addressLine2 = addressLine2;
 	    return this;
@@ -53,7 +53,7 @@ public class AddressPortable {
 	private String addressLine3;
 
 	public String addressLine3() { return addressLine3; }
-	
+
 	public AddressPortable addressLine3(String addressLine3) {
 	    this.addressLine3 = addressLine3;
 	    return this;
@@ -66,7 +66,7 @@ public class AddressPortable {
 	private String adminArea1;
 
 	public String adminArea1() { return adminArea1; }
-	
+
 	public AddressPortable adminArea1(String adminArea1) {
 	    this.adminArea1 = adminArea1;
 	    return this;
@@ -79,7 +79,7 @@ public class AddressPortable {
 	private String adminArea2;
 
 	public String adminArea2() { return adminArea2; }
-	
+
 	public AddressPortable adminArea2(String adminArea2) {
 	    this.adminArea2 = adminArea2;
 	    return this;
@@ -92,7 +92,7 @@ public class AddressPortable {
 	private String adminArea3;
 
 	public String adminArea3() { return adminArea3; }
-	
+
 	public AddressPortable adminArea3(String adminArea3) {
 	    this.adminArea3 = adminArea3;
 	    return this;
@@ -105,7 +105,7 @@ public class AddressPortable {
 	private String adminArea4;
 
 	public String adminArea4() { return adminArea4; }
-	
+
 	public AddressPortable adminArea4(String adminArea4) {
 	    this.adminArea4 = adminArea4;
 	    return this;
@@ -119,7 +119,7 @@ public class AddressPortable {
 	private String countryCode;
 
 	public String countryCode() { return countryCode; }
-	
+
 	public AddressPortable countryCode(String countryCode) {
 	    this.countryCode = countryCode;
 	    return this;
@@ -132,7 +132,7 @@ public class AddressPortable {
 	private String postalCode;
 
 	public String postalCode() { return postalCode; }
-	
+
 	public AddressPortable postalCode(String postalCode) {
 	    this.postalCode = postalCode;
 	    return this;

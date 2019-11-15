@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * Customizes the payer experience during the approval process for the payment with PayPal.<blockquote><strong>Note:</strong> Partners and Marketplaces might configure <code>brand_name</code> and <code>shipping_preference</code> during partner account setup, which overrides the request values.</blockquote>
  */
@@ -27,7 +27,7 @@ public class ApplicationContext {
 	private String brandName;
 
 	public String brandName() { return brandName; }
-	
+
 	public ApplicationContext brandName(String brandName) {
 	    this.brandName = brandName;
 	    return this;
@@ -40,7 +40,7 @@ public class ApplicationContext {
 	private String cancelUrl;
 
 	public String cancelUrl() { return cancelUrl; }
-	
+
 	public ApplicationContext cancelUrl(String cancelUrl) {
 	    this.cancelUrl = cancelUrl;
 	    return this;
@@ -53,7 +53,7 @@ public class ApplicationContext {
 	private String landingPage;
 
 	public String landingPage() { return landingPage; }
-	
+
 	public ApplicationContext landingPage(String landingPage) {
 	    this.landingPage = landingPage;
 	    return this;
@@ -66,7 +66,7 @@ public class ApplicationContext {
 	private String locale;
 
 	public String locale() { return locale; }
-	
+
 	public ApplicationContext locale(String locale) {
 	    this.locale = locale;
 	    return this;
@@ -79,7 +79,7 @@ public class ApplicationContext {
 	private PaymentMethod paymentMethod;
 
 	public PaymentMethod paymentMethod() { return paymentMethod; }
-	
+
 	public ApplicationContext paymentMethod(PaymentMethod paymentMethod) {
 	    this.paymentMethod = paymentMethod;
 	    return this;
@@ -92,7 +92,7 @@ public class ApplicationContext {
 	private String paymentToken;
 
 	public String paymentToken() { return paymentToken; }
-	
+
 	public ApplicationContext paymentToken(String paymentToken) {
 	    this.paymentToken = paymentToken;
 	    return this;
@@ -105,7 +105,7 @@ public class ApplicationContext {
 	private String returnUrl;
 
 	public String returnUrl() { return returnUrl; }
-	
+
 	public ApplicationContext returnUrl(String returnUrl) {
 	    this.returnUrl = returnUrl;
 	    return this;
@@ -118,7 +118,7 @@ public class ApplicationContext {
 	private String shippingPreference;
 
 	public String shippingPreference() { return shippingPreference; }
-	
+
 	public ApplicationContext shippingPreference(String shippingPreference) {
 	    this.shippingPreference = shippingPreference;
 	    return this;
@@ -131,7 +131,7 @@ public class ApplicationContext {
 	private String userAction;
 
 	public String userAction() { return userAction; }
-	
+
 	public ApplicationContext userAction(String userAction) {
 	    this.userAction = userAction;
 	    return this;

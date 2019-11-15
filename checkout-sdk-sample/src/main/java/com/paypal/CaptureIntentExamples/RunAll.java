@@ -1,5 +1,5 @@
 package com.paypal.CaptureIntentExamples;
-import com.braintreepayments.http.HttpResponse;
+import com.paypal.http.HttpResponse;
 import com.paypal.AuthorizeIntentExamples.RefundOrder;
 import com.paypal.orders.Capture;
 import com.paypal.orders.LinkDescription;
@@ -47,7 +47,7 @@ public class RunAll {
     				}
     			}
             }
-            
+
             // Refunding Order
             System.out.println("Refunding Order...");
             HttpResponse<Refund> refundResponse = new RefundOrder().refundOrder(captureId, false);

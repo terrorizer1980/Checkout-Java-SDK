@@ -16,9 +16,9 @@ public class PayPalClient {
 	 * LiveEnvironment.
 	 */
 	private PayPalEnvironment environment = new PayPalEnvironment.Sandbox(
-			System.getProperty("PAYPAL_CLIENT_ID") != null ? System.getProperty("PAYPAL_CLIENT_ID")
+			System.getenv("PAYPAL_CLIENT_ID") != null ? System.getenv("PAYPAL_CLIENT_ID")
 					: "<<PAYPAL-CLIENT-ID>>",
-			System.getProperty("PAYPAL_CLIENT_SECRET") != null ? System.getProperty("PAYPAL_CLIENT_SECRET")
+			System.getenv("PAYPAL_CLIENT_SECRET") != null ? System.getenv("PAYPAL_CLIENT_SECRET")
 					: "<<PAYPAL-CLIENT-SECRET>>");
 
 	/**
@@ -30,7 +30,7 @@ public class PayPalClient {
 
 	/**
 	 * Method to get client object
-	 * 
+	 *
 	 * @return PayPalHttpClient client
 	 */
 	public PayPalHttpClient client() {
@@ -39,7 +39,7 @@ public class PayPalClient {
 
 	/**
 	 * Method to pretty print a response
-	 * 
+	 *
 	 * @param jo  JSONObject
 	 * @param pre prefix (default="")
 	 * @return String pretty printed JSON

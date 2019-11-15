@@ -5,8 +5,8 @@ import java.io.IOException;
 import com.paypal.orders.*;
 import org.json.JSONObject;
 
-import com.braintreepayments.http.HttpResponse;
-import com.braintreepayments.http.serializer.Json;
+import com.paypal.http.HttpResponse;
+import com.paypal.http.serializer.Json;
 import com.paypal.PayPalClient;
 
 public class CaptureOrder extends PayPalClient {
@@ -14,7 +14,7 @@ public class CaptureOrder extends PayPalClient {
 	/**
 	 * Creating empty body for capture request. We can set the payment source if
 	 * required.
-	 * 
+	 *
 	 * @return OrderRequest request with empty body
 	 */
 	public OrderRequest buildRequestBody() {
@@ -24,7 +24,7 @@ public class CaptureOrder extends PayPalClient {
 	/**
 	 * Method to capture order after creation. Valid approved order Id should be
 	 * passed an argument to this method.
-	 * 
+	 *
 	 * @param orderId Order ID from createOrder response
 	 * @param debug   true = print response data
 	 * @return HttpResponse<Order> response received from API
@@ -61,7 +61,7 @@ public class CaptureOrder extends PayPalClient {
 	/**
 	 * Driver Function to invoke capture payment on order. Order Id should be
 	 * replaced with the valid approved order id.
-	 * 
+	 *
 	 * @param args
 	 */
 	public static void main(String[] args) {

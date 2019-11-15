@@ -1,7 +1,7 @@
 package com.paypal;
 
-import com.braintreepayments.http.HttpResponse;
-import com.braintreepayments.http.exceptions.HttpException;
+import com.paypal.http.HttpResponse;
+import com.paypal.http.exceptions.HttpException;
 import org.json.JSONObject;
 import java.io.IOException;
 import java.util.*;

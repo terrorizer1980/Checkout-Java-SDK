@@ -1,15 +1,16 @@
 package com.paypal.core;
 
-import com.braintreepayments.http.HttpClient;
-import com.braintreepayments.http.HttpRequest;
+import com.paypal.http.HttpClient;
+import com.paypal.http.HttpRequest;
 import com.paypal.core.object.AccessToken;
 import com.paypal.core.request.AccessTokenRequest;
 import com.paypal.core.request.RefreshTokenRequest;
 
+
 import java.io.IOException;
 
-import static com.braintreepayments.http.Headers.ACCEPT_ENCODING;
-import static com.braintreepayments.http.Headers.AUTHORIZATION;
+import static com.paypal.http.Headers.ACCEPT_ENCODING;
+import static com.paypal.http.Headers.AUTHORIZATION;
 import static com.paypal.core.UserAgent.USER_AGENT;
 
 public class PayPalHttpClient extends HttpClient {

@@ -1,6 +1,6 @@
 package com.paypal;
 
-import com.braintreepayments.http.HttpClient;
+import com.paypal.http.HttpClient;
 import com.paypal.core.PayPalHttpClient;
 import com.paypal.core.PayPalEnvironment;
 import org.testng.annotations.BeforeMethod;

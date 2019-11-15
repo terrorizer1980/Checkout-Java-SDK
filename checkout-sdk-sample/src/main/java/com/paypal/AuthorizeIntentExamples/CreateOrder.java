@@ -7,15 +7,15 @@ import java.util.List;
 import com.paypal.orders.*;
 import org.json.JSONObject;
 
-import com.braintreepayments.http.HttpResponse;
-import com.braintreepayments.http.serializer.Json;
+import com.paypal.http.HttpResponse;
+import com.paypal.http.serializer.Json;
 import com.paypal.PayPalClient;
 
 public class CreateOrder extends PayPalClient {
 
 	/**
 	 * Method to create complete order body with <b>AUTHORIZE</b> intent
-	 * 
+	 *
 	 * @return OrderRequest with created order request
 	 */
 	private OrderRequest buildCompleteRequestBody() {
@@ -58,7 +58,7 @@ public class CreateOrder extends PayPalClient {
 
 	/**
 	 * Method to create minimum required order body with <b>AUTHORIZE</b> intent
-	 * 
+	 *
 	 * @return OrderRequest with created order request
 	 */
 	private OrderRequest buildMinimumRequestBody() {
@@ -77,7 +77,7 @@ public class CreateOrder extends PayPalClient {
 
 	/**
 	 * Method to create order with complete payload
-	 * 
+	 *
 	 * @param debug true = print response data
 	 * @return HttpResponse<Order> response received from API
 	 * @throws IOException Exceptions from API if any
@@ -87,6 +87,7 @@ public class CreateOrder extends PayPalClient {
 		request.header("prefer","return=representation");
 		request.requestBody(buildCompleteRequestBody());
 		HttpResponse<Order> response = client().execute(request);
+		System.out.println(response.headers().header("paypal-Debug-Id"));
 		if (debug) {
 			if (response.statusCode() == 201) {
 				System.out.println("Order with Complete Payload: ");
@@ -109,7 +110,7 @@ public class CreateOrder extends PayPalClient {
 
 	/**
 	 * Method to create order with minimum required payload
-	 * 
+	 *
 	 * @param debug true = print response data
 	 * @return HttpResponse<Order> response received from API
 	 * @throws IOException Exceptions from API if any
@@ -147,7 +148,7 @@ public class CreateOrder extends PayPalClient {
 		try {
 			new CreateOrder().createOrder(true);
 			new CreateOrder().createOrderWithMinimumPayload(true);
-		} catch (com.braintreepayments.http.exceptions.HttpException e) {
+		} catch (com.paypal.http.exceptions.HttpException e) {
 			System.out.println(e.getLocalizedMessage());
 		} catch (Exception e) {
 			e.printStackTrace();

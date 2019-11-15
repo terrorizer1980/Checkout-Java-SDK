@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The phone information.
  */
@@ -28,7 +28,7 @@ public class PhoneWithType {
 	private Phone phoneNumber;
 
 	public Phone phoneNumber() { return phoneNumber; }
-	
+
 	public PhoneWithType phoneNumber(Phone phoneNumber) {
 	    this.phoneNumber = phoneNumber;
 	    return this;
@@ -41,7 +41,7 @@ public class PhoneWithType {
 	private String phoneType;
 
 	public String phoneType() { return phoneType; }
-	
+
 	public PhoneWithType phoneType(String phoneType) {
 	    this.phoneType = phoneType;
 	    return this;

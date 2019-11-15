@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.json.JSONObject;
 
-import com.braintreepayments.http.HttpResponse;
-import com.braintreepayments.http.serializer.Json;
+import com.paypal.http.HttpResponse;
+import com.paypal.http.serializer.Json;
 import com.paypal.PayPalClient;
 import com.paypal.orders.AddressPortable;
 import com.paypal.orders.AmountBreakdown;
@@ -27,7 +27,7 @@ public class CreateOrder extends PayPalClient {
 
 	/**
 	 * Method to generate sample create order body with <b>CAPTURE</b> intent
-	 * 
+	 *
 	 * @return OrderRequest with created order request
 	 */
 	private OrderRequest buildRequestBody() {
@@ -70,7 +70,7 @@ public class CreateOrder extends PayPalClient {
 
 	/**
 	 * Method to create order
-	 * 
+	 *
 	 * @param debug true = print response data
 	 * @return HttpResponse<Order> response received from API
 	 * @throws IOException Exceptions from API if any
@@ -106,7 +106,7 @@ public class CreateOrder extends PayPalClient {
 	public static void main(String args[]) {
 		try {
 			new CreateOrder().createOrder(true);
-		} catch (com.braintreepayments.http.exceptions.HttpException e) {
+		} catch (com.paypal.http.exceptions.HttpException e) {
 			System.out.println(e.getLocalizedMessage());
 		} catch (Exception e) {
 			e.printStackTrace();

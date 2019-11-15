@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The request-related [HATEOAS link](/docs/api/reference/api-responses/#hateoas-links) information.
  */
@@ -27,7 +27,7 @@ public class LinkDescription {
 	private String encType;
 
 	public String encType() { return encType; }
-	
+
 	public LinkDescription encType(String encType) {
 	    this.encType = encType;
 	    return this;
@@ -41,7 +41,7 @@ public class LinkDescription {
 	private String href;
 
 	public String href() { return href; }
-	
+
 	public LinkDescription href(String href) {
 	    this.href = href;
 	    return this;
@@ -54,7 +54,7 @@ public class LinkDescription {
 	private String mediaType;
 
 	public String mediaType() { return mediaType; }
-	
+
 	public LinkDescription mediaType(String mediaType) {
 	    this.mediaType = mediaType;
 	    return this;
@@ -67,7 +67,7 @@ public class LinkDescription {
 	private String method;
 
 	public String method() { return method; }
-	
+
 	public LinkDescription method(String method) {
 	    this.method = method;
 	    return this;
@@ -81,7 +81,7 @@ public class LinkDescription {
 	private String rel;
 
 	public String rel() { return rel; }
-	
+
 	public LinkDescription rel(String rel) {
 	    this.rel = rel;
 	    return this;
@@ -94,7 +94,7 @@ public class LinkDescription {
 	private LinkSchema schema;
 
 	public LinkSchema schema() { return schema; }
-	
+
 	public LinkDescription schema(LinkSchema schema) {
 	    this.schema = schema;
 	    return this;
@@ -107,7 +107,7 @@ public class LinkDescription {
 	private LinkSchema targetSchema;
 
 	public LinkSchema targetSchema() { return targetSchema; }
-	
+
 	public LinkDescription targetSchema(LinkSchema targetSchema) {
 	    this.targetSchema = targetSchema;
 	    return this;
@@ -120,7 +120,7 @@ public class LinkDescription {
 	private String title;
 
 	public String title() { return title; }
-	
+
 	public LinkDescription title(String title) {
 	    this.title = title;
 	    return this;

@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The customer who approves and pays for the order. The customer is also known as the payer.
  */
@@ -27,7 +27,7 @@ public class Payer {
 	private AddressPortable addressPortable;
 
 	public AddressPortable addressPortable() { return addressPortable; }
-	
+
 	public Payer addressPortable(AddressPortable addressPortable) {
 	    this.addressPortable = addressPortable;
 	    return this;
@@ -40,7 +40,7 @@ public class Payer {
 	private String birthDate;
 
 	public String birthDate() { return birthDate; }
-	
+
 	public Payer birthDate(String birthDate) {
 	    this.birthDate = birthDate;
 	    return this;
@@ -53,7 +53,7 @@ public class Payer {
 	private String email;
 
 	public String email() { return email; }
-	
+
 	public Payer email(String email) {
 	    this.email = email;
 	    return this;
@@ -66,7 +66,7 @@ public class Payer {
 	private Name name;
 
 	public Name name() { return name; }
-	
+
 	public Payer name(Name name) {
 	    this.name = name;
 	    return this;
@@ -79,7 +79,7 @@ public class Payer {
 	private String payerId;
 
 	public String payerId() { return payerId; }
-	
+
 	public Payer payerId(String payerId) {
 	    this.payerId = payerId;
 	    return this;
@@ -92,7 +92,7 @@ public class Payer {
 	private PhoneWithType phoneWithType;
 
 	public PhoneWithType phoneWithType() { return phoneWithType; }
-	
+
 	public Payer phoneWithType(PhoneWithType phoneWithType) {
 	    this.phoneWithType = phoneWithType;
 	    return this;
@@ -105,7 +105,7 @@ public class Payer {
 	private TaxInfo taxInfo;
 
 	public TaxInfo taxInfo() { return taxInfo; }
-	
+
 	public Payer taxInfo(TaxInfo taxInfo) {
 	    this.taxInfo = taxInfo;
 	    return this;

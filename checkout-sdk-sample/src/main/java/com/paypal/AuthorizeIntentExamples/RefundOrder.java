@@ -4,8 +4,8 @@ import java.io.IOException;
 
 import org.json.JSONObject;
 
-import com.braintreepayments.http.HttpResponse;
-import com.braintreepayments.http.serializer.Json;
+import com.paypal.http.HttpResponse;
+import com.paypal.http.serializer.Json;
 import com.paypal.PayPalClient;
 import com.paypal.payments.CapturesRefundRequest;
 import com.paypal.payments.LinkDescription;
@@ -18,7 +18,7 @@ public class RefundOrder extends PayPalClient {
 	/**
 	 * Creating empty body for Refund request. This request body can be created with
 	 * correct values as per the need.
-	 * 
+	 *
 	 * @return OrderRequest request with empty body
 	 */
 	public RefundRequest buildRequestBody() {
@@ -32,7 +32,7 @@ public class RefundOrder extends PayPalClient {
 
 	/**
 	 * Method to Refund the Capture. valid capture Id should be passed.
-	 * 
+	 *
 	 * @param captureId Capture ID from authorizeOrder response
 	 * @param debug     true = print response data
 	 * @return HttpResponse<Capture> response received from API
@@ -59,9 +59,9 @@ public class RefundOrder extends PayPalClient {
 
 	/**
 	 * This is the driver function which initiates capture refund.
-	 * 
+	 *
 	 * Capture Id should be replaced with an valid capture id.
-	 * 
+	 *
 	 * @param args
 	 */
 	public static void main(String[] args) {

@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The refund information.
  */
@@ -27,7 +27,7 @@ public class Refund {
 	private Money amount;
 
 	public Money amount() { return amount; }
-	
+
 	public Refund amount(Money amount) {
 	    this.amount = amount;
 	    return this;
@@ -40,7 +40,7 @@ public class Refund {
 	private String createTime;
 
 	public String createTime() { return createTime; }
-	
+
 	public Refund createTime(String createTime) {
 	    this.createTime = createTime;
 	    return this;
@@ -53,7 +53,7 @@ public class Refund {
 	private String id;
 
 	public String id() { return id; }
-	
+
 	public Refund id(String id) {
 	    this.id = id;
 	    return this;
@@ -66,7 +66,7 @@ public class Refund {
 	private String invoiceId;
 
 	public String invoiceId() { return invoiceId; }
-	
+
 	public Refund invoiceId(String invoiceId) {
 	    this.invoiceId = invoiceId;
 	    return this;
@@ -79,7 +79,7 @@ public class Refund {
 	private List<LinkDescription> links;
 
 	public List<LinkDescription> links() { return links; }
-	
+
 	public Refund links(List<LinkDescription> links) {
 	    this.links = links;
 	    return this;
@@ -92,7 +92,7 @@ public class Refund {
 	private String noteToPayer;
 
 	public String noteToPayer() { return noteToPayer; }
-	
+
 	public Refund noteToPayer(String noteToPayer) {
 	    this.noteToPayer = noteToPayer;
 	    return this;
@@ -105,7 +105,7 @@ public class Refund {
 	private RefundStatusDetails refundStatusDetails;
 
 	public RefundStatusDetails refundStatusDetails() { return refundStatusDetails; }
-	
+
 	public Refund refundStatusDetails(RefundStatusDetails refundStatusDetails) {
 	    this.refundStatusDetails = refundStatusDetails;
 	    return this;
@@ -118,7 +118,7 @@ public class Refund {
 	private MerchantPayableBreakdown sellerPayableBreakdown;
 
 	public MerchantPayableBreakdown sellerPayableBreakdown() { return sellerPayableBreakdown; }
-	
+
 	public Refund sellerPayableBreakdown(MerchantPayableBreakdown sellerPayableBreakdown) {
 	    this.sellerPayableBreakdown = sellerPayableBreakdown;
 	    return this;
@@ -131,7 +131,7 @@ public class Refund {
 	private String status;
 
 	public String status() { return status; }
-	
+
 	public Refund status(String status) {
 	    this.status = status;
 	    return this;
@@ -144,7 +144,7 @@ public class Refund {
 	private String updateTime;
 
 	public String updateTime() { return updateTime; }
-	
+
 	public Refund updateTime(String updateTime) {
 	    this.updateTime = updateTime;
 	    return this;

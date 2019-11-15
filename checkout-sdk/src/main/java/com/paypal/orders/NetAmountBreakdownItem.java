@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The net amount. Returned when the currency of the refund is different from the currency of the PayPal account where the merchant holds their funds.
  */
@@ -27,7 +27,7 @@ public class NetAmountBreakdownItem {
 	private Money convertedAmount;
 
 	public Money convertedAmount() { return convertedAmount; }
-	
+
 	public NetAmountBreakdownItem convertedAmount(Money convertedAmount) {
 	    this.convertedAmount = convertedAmount;
 	    return this;
@@ -40,7 +40,7 @@ public class NetAmountBreakdownItem {
 	private Money payableAmount;
 
 	public Money payableAmount() { return payableAmount; }
-	
+
 	public NetAmountBreakdownItem payableAmount(Money payableAmount) {
 	    this.payableAmount = payableAmount;
 	    return this;

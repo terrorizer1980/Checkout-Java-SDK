@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The phone number, in its canonical international [E.164 numbering plan format](https://www.itu.int/rec/T-REC-E.164/en).
  */
@@ -27,7 +27,7 @@ public class Phone {
 	private String countryCallingCode;
 
 	public String countryCallingCode() { return countryCallingCode; }
-	
+
 	public Phone countryCallingCode(String countryCallingCode) {
 	    this.countryCallingCode = countryCallingCode;
 	    return this;
@@ -40,7 +40,7 @@ public class Phone {
 	private String extensionNumber;
 
 	public String extensionNumber() { return extensionNumber; }
-	
+
 	public Phone extensionNumber(String extensionNumber) {
 	    this.extensionNumber = extensionNumber;
 	    return this;
@@ -54,7 +54,7 @@ public class Phone {
 	private String nationalNumber;
 
 	public String nationalNumber() { return nationalNumber; }
-	
+
 	public Phone nationalNumber(String nationalNumber) {
 	    this.nationalNumber = nationalNumber;
 	    return this;

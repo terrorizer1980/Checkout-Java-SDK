@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The payment card to use to fund a payment. Can be a credit or debit card.
  */
@@ -27,7 +27,7 @@ public class Card {
 	private AddressPortable addressPortable;
 
 	public AddressPortable addressPortable() { return addressPortable; }
-	
+
 	public Card addressPortable(AddressPortable addressPortable) {
 	    this.addressPortable = addressPortable;
 	    return this;
@@ -40,7 +40,7 @@ public class Card {
 	private String cardType;
 
 	public String cardType() { return cardType; }
-	
+
 	public Card cardType(String cardType) {
 	    this.cardType = cardType;
 	    return this;
@@ -54,7 +54,7 @@ public class Card {
 	private String expiry;
 
 	public String expiry() { return expiry; }
-	
+
 	public Card expiry(String expiry) {
 	    this.expiry = expiry;
 	    return this;
@@ -67,7 +67,7 @@ public class Card {
 	private String id;
 
 	public String id() { return id; }
-	
+
 	public Card id(String id) {
 	    this.id = id;
 	    return this;
@@ -80,7 +80,7 @@ public class Card {
 	private String lastDigits;
 
 	public String lastDigits() { return lastDigits; }
-	
+
 	public Card lastDigits(String lastDigits) {
 	    this.lastDigits = lastDigits;
 	    return this;
@@ -93,7 +93,7 @@ public class Card {
 	private String name;
 
 	public String name() { return name; }
-	
+
 	public Card name(String name) {
 	    this.name = name;
 	    return this;
@@ -107,7 +107,7 @@ public class Card {
 	private String number;
 
 	public String number() { return number; }
-	
+
 	public Card number(String number) {
 	    this.number = number;
 	    return this;
@@ -120,7 +120,7 @@ public class Card {
 	private String securityCode;
 
 	public String securityCode() { return securityCode; }
-	
+
 	public Card securityCode(String securityCode) {
 	    this.securityCode = securityCode;
 	    return this;

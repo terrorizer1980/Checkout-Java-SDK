@@ -1,7 +1,7 @@
 package com.paypal.core.request;
 
-import com.braintreepayments.http.Headers;
-import com.braintreepayments.http.HttpRequest;
+import com.paypal.http.Headers;
+import com.paypal.http.HttpRequest;
 import com.paypal.core.PayPalEnvironment;
 import com.paypal.core.object.AccessToken;
 
