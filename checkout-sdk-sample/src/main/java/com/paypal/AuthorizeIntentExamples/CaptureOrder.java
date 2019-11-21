@@ -4,8 +4,8 @@ import java.io.IOException;
 
 import org.json.JSONObject;
 
-import com.braintreepayments.http.HttpResponse;
-import com.braintreepayments.http.serializer.Json;
+import com.paypal.http.HttpResponse;
+import com.paypal.http.serializer.Json;
 import com.paypal.PayPalClient;
 import com.paypal.orders.OrderRequest;
 import com.paypal.payments.AuthorizationsCaptureRequest;
@@ -16,7 +16,7 @@ public class CaptureOrder extends PayPalClient {
 
 	/**
 	 * Creating empty body for capture request
-	 * 
+	 *
 	 * @return OrderRequest request with empty body
 	 */
 	public OrderRequest buildRequestBody() {
@@ -25,7 +25,7 @@ public class CaptureOrder extends PayPalClient {
 
 	/**
 	 * Method to capture order after authorization
-	 * 
+	 *
 	 * @param authId Authorization ID from authorizeOrder response
 	 * @param debug  true = print response data
 	 * @return HttpResponse<Capture> response received from API
@@ -53,7 +53,7 @@ public class CaptureOrder extends PayPalClient {
 	 * This is the driver function which invokes the captureOrder function to
 	 * perform capture on authorization. Authorization Id should be replaced with
 	 * the valid authorization id.
-	 * 
+	 *
 	 * @param args
 	 */
 	public static void main(String[] args) {

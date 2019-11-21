@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The options that the payee or merchant offers to the payer to ship or pick up their items.
  */
@@ -27,7 +27,7 @@ public class ShippingOption {
 	private Money amount;
 
 	public Money amount() { return amount; }
-	
+
 	public ShippingOption amount(Money amount) {
 	    this.amount = amount;
 	    return this;
@@ -41,7 +41,7 @@ public class ShippingOption {
 	private String id;
 
 	public String id() { return id; }
-	
+
 	public ShippingOption id(String id) {
 	    this.id = id;
 	    return this;
@@ -55,7 +55,7 @@ public class ShippingOption {
 	private String label;
 
 	public String label() { return label; }
-	
+
 	public ShippingOption label(String label) {
 	    this.label = label;
 	    return this;
@@ -69,7 +69,7 @@ public class ShippingOption {
 	private Boolean selected;
 
 	public Boolean selected() { return selected; }
-	
+
 	public ShippingOption selected(Boolean selected) {
 	    this.selected = selected;
 	    return this;
@@ -82,7 +82,7 @@ public class ShippingOption {
 	private String shippingType;
 
 	public String shippingType() { return shippingType; }
-	
+
 	public ShippingOption shippingType(String shippingType) {
 	    this.shippingType = shippingType;
 	    return this;

@@ -1,15 +1,16 @@
 package com.paypal.core;
 
-import com.braintreepayments.http.HttpClient;
-import com.braintreepayments.http.HttpRequest;
+import com.paypal.http.HttpClient;
+import com.paypal.http.HttpRequest;
 import com.paypal.core.object.AccessToken;
 import com.paypal.core.request.AccessTokenRequest;
 import com.paypal.core.request.RefreshTokenRequest;
 
+
 import java.io.IOException;
 
-import static com.braintreepayments.http.Headers.ACCEPT_ENCODING;
-import static com.braintreepayments.http.Headers.AUTHORIZATION;
+import static com.paypal.http.Headers.ACCEPT_ENCODING;
+import static com.paypal.http.Headers.AUTHORIZATION;
 import static com.paypal.core.UserAgent.USER_AGENT;
 
 public class PayPalHttpClient extends HttpClient {
@@ -43,7 +44,7 @@ public class PayPalHttpClient extends HttpClient {
 
 	private void addFPTIHeaders(HttpRequest request) throws IOException {
 		request.header("sdk_name", "Checkout SDK");
-		request.header("sdk_version", "1.0.1");
+		request.header("sdk_version", "1.0.2");
 		request.header("sdk_tech_stack", "Java " + System.getProperty("java.version"));
 		request.header("api_integration_type", "PAYPALSDK");
 	}

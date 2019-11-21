@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The detailed breakdown of the captured payment.
  */
@@ -27,7 +27,7 @@ public class MerchantReceivableBreakdown {
 	private Money grossAmount;
 
 	public Money grossAmount() { return grossAmount; }
-	
+
 	public MerchantReceivableBreakdown grossAmount(Money grossAmount) {
 	    this.grossAmount = grossAmount;
 	    return this;
@@ -40,7 +40,7 @@ public class MerchantReceivableBreakdown {
 	private Money netAmount;
 
 	public Money netAmount() { return netAmount; }
-	
+
 	public MerchantReceivableBreakdown netAmount(Money netAmount) {
 	    this.netAmount = netAmount;
 	    return this;
@@ -53,7 +53,7 @@ public class MerchantReceivableBreakdown {
 	private Money paypalFee;
 
 	public Money paypalFee() { return paypalFee; }
-	
+
 	public MerchantReceivableBreakdown paypalFee(Money paypalFee) {
 	    this.paypalFee = paypalFee;
 	    return this;
@@ -66,7 +66,7 @@ public class MerchantReceivableBreakdown {
 	private List<PlatformFee> platformFees;
 
 	public List<PlatformFee> platformFees() { return platformFees; }
-	
+
 	public MerchantReceivableBreakdown platformFees(List<PlatformFee> platformFees) {
 	    this.platformFees = platformFees;
 	    return this;
@@ -79,7 +79,7 @@ public class MerchantReceivableBreakdown {
 	private Money receivableAmount;
 
 	public Money receivableAmount() { return receivableAmount; }
-	
+
 	public MerchantReceivableBreakdown receivableAmount(Money receivableAmount) {
 	    this.receivableAmount = receivableAmount;
 	    return this;

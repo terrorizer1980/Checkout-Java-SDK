@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The JSON patch object to apply partial updates to resources.
  */
@@ -27,7 +27,7 @@ public class Patch {
 	private String from;
 
 	public String from() { return from; }
-	
+
 	public Patch from(String from) {
 	    this.from = from;
 	    return this;
@@ -41,7 +41,7 @@ public class Patch {
 	private String op;
 
 	public String op() { return op; }
-	
+
 	public Patch op(String op) {
 	    this.op = op;
 	    return this;
@@ -54,7 +54,7 @@ public class Patch {
 	private String path;
 
 	public String path() { return path; }
-	
+
 	public Patch path(String path) {
 	    this.path = path;
 	    return this;
@@ -67,7 +67,7 @@ public class Patch {
 	private Object value;
 
 	public Object value() { return value; }
-	
+
 	public Patch value(Object value) {
 	    this.value = value;
 	    return this;

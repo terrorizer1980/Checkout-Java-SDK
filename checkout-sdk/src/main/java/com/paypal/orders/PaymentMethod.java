@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The customer and merchant payment preferences.
  */
@@ -27,7 +27,7 @@ public class PaymentMethod {
 	private String payeePreferred;
 
 	public String payeePreferred() { return payeePreferred; }
-	
+
 	public PaymentMethod payeePreferred(String payeePreferred) {
 	    this.payeePreferred = payeePreferred;
 	    return this;
@@ -40,7 +40,7 @@ public class PaymentMethod {
 	private String payerSelected;
 
 	public String payerSelected() { return payerSelected; }
-	
+
 	public PaymentMethod payerSelected(String payerSelected) {
 	    this.payerSelected = payerSelected;
 	    return this;

@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The breakdown of the amount. Breakdown provides details such as total item amount, total tax amount, shipping, handling, insurance, and discounts, if any.
  */
@@ -27,7 +27,7 @@ public class AmountBreakdown {
 	private Money discount;
 
 	public Money discount() { return discount; }
-	
+
 	public AmountBreakdown discount(Money discount) {
 	    this.discount = discount;
 	    return this;
@@ -40,7 +40,7 @@ public class AmountBreakdown {
 	private Money handling;
 
 	public Money handling() { return handling; }
-	
+
 	public AmountBreakdown handling(Money handling) {
 	    this.handling = handling;
 	    return this;
@@ -53,7 +53,7 @@ public class AmountBreakdown {
 	private Money insurance;
 
 	public Money insurance() { return insurance; }
-	
+
 	public AmountBreakdown insurance(Money insurance) {
 	    this.insurance = insurance;
 	    return this;
@@ -66,7 +66,7 @@ public class AmountBreakdown {
 	private Money itemTotal;
 
 	public Money itemTotal() { return itemTotal; }
-	
+
 	public AmountBreakdown itemTotal(Money itemTotal) {
 	    this.itemTotal = itemTotal;
 	    return this;
@@ -79,7 +79,7 @@ public class AmountBreakdown {
 	private Money shipping;
 
 	public Money shipping() { return shipping; }
-	
+
 	public AmountBreakdown shipping(Money shipping) {
 	    this.shipping = shipping;
 	    return this;
@@ -92,7 +92,7 @@ public class AmountBreakdown {
 	private Money shippingDiscount;
 
 	public Money shippingDiscount() { return shippingDiscount; }
-	
+
 	public AmountBreakdown shippingDiscount(Money shippingDiscount) {
 	    this.shippingDiscount = shippingDiscount;
 	    return this;
@@ -105,7 +105,7 @@ public class AmountBreakdown {
 	private Money taxTotal;
 
 	public Money taxTotal() { return taxTotal; }
-	
+
 	public AmountBreakdown taxTotal(Money taxTotal) {
 	    this.taxTotal = taxTotal;
 	    return this;

@@ -1,7 +1,7 @@
 package com.paypal.core.object;
 
-import com.braintreepayments.http.annotations.Model;
-import com.braintreepayments.http.annotations.SerializedName;
+import com.paypal.http.annotations.Model;
+import com.paypal.http.annotations.SerializedName;
 import com.paypal.core.Authorization;
 
 import java.util.Date;

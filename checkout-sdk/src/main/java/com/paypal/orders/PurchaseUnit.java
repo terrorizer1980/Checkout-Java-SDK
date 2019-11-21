@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The purchase unit details. Used to capture required information for the payment contract.
  */
@@ -27,7 +27,7 @@ public class PurchaseUnit {
 	private AmountWithBreakdown amountWithBreakdown;
 
 	public AmountWithBreakdown amountWithBreakdown() { return amountWithBreakdown; }
-	
+
 	public PurchaseUnit amountWithBreakdown(AmountWithBreakdown amountWithBreakdown) {
 	    this.amountWithBreakdown = amountWithBreakdown;
 	    return this;
@@ -40,7 +40,7 @@ public class PurchaseUnit {
 	private String customId;
 
 	public String customId() { return customId; }
-	
+
 	public PurchaseUnit customId(String customId) {
 	    this.customId = customId;
 	    return this;
@@ -53,7 +53,7 @@ public class PurchaseUnit {
 	private String description;
 
 	public String description() { return description; }
-	
+
 	public PurchaseUnit description(String description) {
 	    this.description = description;
 	    return this;
@@ -66,7 +66,7 @@ public class PurchaseUnit {
 	private String id;
 
 	public String id() { return id; }
-	
+
 	public PurchaseUnit id(String id) {
 	    this.id = id;
 	    return this;
@@ -79,7 +79,7 @@ public class PurchaseUnit {
 	private String invoiceId;
 
 	public String invoiceId() { return invoiceId; }
-	
+
 	public PurchaseUnit invoiceId(String invoiceId) {
 	    this.invoiceId = invoiceId;
 	    return this;
@@ -92,7 +92,7 @@ public class PurchaseUnit {
 	private List<Item> items;
 
 	public List<Item> items() { return items; }
-	
+
 	public PurchaseUnit items(List<Item> items) {
 	    this.items = items;
 	    return this;
@@ -105,7 +105,7 @@ public class PurchaseUnit {
 	private Payee payee;
 
 	public Payee payee() { return payee; }
-	
+
 	public PurchaseUnit payee(Payee payee) {
 	    this.payee = payee;
 	    return this;
@@ -118,7 +118,7 @@ public class PurchaseUnit {
 	private PaymentInstruction paymentInstruction;
 
 	public PaymentInstruction paymentInstruction() { return paymentInstruction; }
-	
+
 	public PurchaseUnit paymentInstruction(PaymentInstruction paymentInstruction) {
 	    this.paymentInstruction = paymentInstruction;
 	    return this;
@@ -131,7 +131,7 @@ public class PurchaseUnit {
 	private PaymentCollection payments;
 
 	public PaymentCollection payments() { return payments; }
-	
+
 	public PurchaseUnit payments(PaymentCollection payments) {
 	    this.payments = payments;
 	    return this;
@@ -144,7 +144,7 @@ public class PurchaseUnit {
 	private String referenceId;
 
 	public String referenceId() { return referenceId; }
-	
+
 	public PurchaseUnit referenceId(String referenceId) {
 	    this.referenceId = referenceId;
 	    return this;
@@ -157,7 +157,7 @@ public class PurchaseUnit {
 	private ShippingDetail shippingDetail;
 
 	public ShippingDetail shippingDetail() { return shippingDetail; }
-	
+
 	public PurchaseUnit shippingDetail(ShippingDetail shippingDetail) {
 	    this.shippingDetail = shippingDetail;
 	    return this;
@@ -170,7 +170,7 @@ public class PurchaseUnit {
 	private String softDescriptor;
 
 	public String softDescriptor() { return softDescriptor; }
-	
+
 	public PurchaseUnit softDescriptor(String softDescriptor) {
 	    this.softDescriptor = softDescriptor;
 	    return this;

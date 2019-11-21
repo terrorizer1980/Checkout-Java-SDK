@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The tokenized payment source to fund a payment.
  */
@@ -28,7 +28,7 @@ public class Token {
 	private String id;
 
 	public String id() { return id; }
-	
+
 	public Token id(String id) {
 	    this.id = id;
 	    return this;
@@ -42,7 +42,7 @@ public class Token {
 	private String type;
 
 	public String type() { return type; }
-	
+
 	public Token type(String type) {
 	    this.type = type;
 	    return this;

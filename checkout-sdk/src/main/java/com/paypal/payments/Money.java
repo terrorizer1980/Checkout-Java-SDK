@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The currency and amount for a financial transaction, such as a balance or payment due.
  */
@@ -28,7 +28,7 @@ public class Money {
 	private String currencyCode;
 
 	public String currencyCode() { return currencyCode; }
-	
+
 	public Money currencyCode(String currencyCode) {
 	    this.currencyCode = currencyCode;
 	    return this;
@@ -42,7 +42,7 @@ public class Money {
 	private String value;
 
 	public String value() { return value; }
-	
+
 	public Money value(String value) {
 	    this.value = value;
 	    return this;

@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * A captured payment.
  */
@@ -27,7 +27,7 @@ public class Capture {
 	private Money amount;
 
 	public Money amount() { return amount; }
-	
+
 	public Capture amount(Money amount) {
 	    this.amount = amount;
 	    return this;
@@ -40,7 +40,7 @@ public class Capture {
 	private String createTime;
 
 	public String createTime() { return createTime; }
-	
+
 	public Capture createTime(String createTime) {
 	    this.createTime = createTime;
 	    return this;
@@ -53,7 +53,7 @@ public class Capture {
 	private String disbursementMode;
 
 	public String disbursementMode() { return disbursementMode; }
-	
+
 	public Capture disbursementMode(String disbursementMode) {
 	    this.disbursementMode = disbursementMode;
 	    return this;
@@ -66,7 +66,7 @@ public class Capture {
 	private Boolean finalCapture;
 
 	public Boolean finalCapture() { return finalCapture; }
-	
+
 	public Capture finalCapture(Boolean finalCapture) {
 	    this.finalCapture = finalCapture;
 	    return this;
@@ -79,7 +79,7 @@ public class Capture {
 	private String id;
 
 	public String id() { return id; }
-	
+
 	public Capture id(String id) {
 	    this.id = id;
 	    return this;
@@ -92,7 +92,7 @@ public class Capture {
 	private String invoiceId;
 
 	public String invoiceId() { return invoiceId; }
-	
+
 	public Capture invoiceId(String invoiceId) {
 	    this.invoiceId = invoiceId;
 	    return this;
@@ -105,7 +105,7 @@ public class Capture {
 	private List<LinkDescription> links;
 
 	public List<LinkDescription> links() { return links; }
-	
+
 	public Capture links(List<LinkDescription> links) {
 	    this.links = links;
 	    return this;
@@ -118,7 +118,7 @@ public class Capture {
 	private SellerProtection sellerProtection;
 
 	public SellerProtection sellerProtection() { return sellerProtection; }
-	
+
 	public Capture sellerProtection(SellerProtection sellerProtection) {
 	    this.sellerProtection = sellerProtection;
 	    return this;
@@ -131,7 +131,7 @@ public class Capture {
 	private MerchantReceivableBreakdown sellerReceivableBreakdown;
 
 	public MerchantReceivableBreakdown sellerReceivableBreakdown() { return sellerReceivableBreakdown; }
-	
+
 	public Capture sellerReceivableBreakdown(MerchantReceivableBreakdown sellerReceivableBreakdown) {
 	    this.sellerReceivableBreakdown = sellerReceivableBreakdown;
 	    return this;
@@ -144,7 +144,7 @@ public class Capture {
 	private String status;
 
 	public String status() { return status; }
-	
+
 	public Capture status(String status) {
 	    this.status = status;
 	    return this;
@@ -157,7 +157,7 @@ public class Capture {
 	private StatusDetails statusDetails;
 
 	public StatusDetails statusDetails() { return statusDetails; }
-	
+
 	public Capture statusDetails(StatusDetails statusDetails) {
 	    this.statusDetails = statusDetails;
 	    return this;
@@ -170,7 +170,7 @@ public class Capture {
 	private String updateTime;
 
 	public String updateTime() { return updateTime; }
-	
+
 	public Capture updateTime(String updateTime) {
 	    this.updateTime = updateTime;
 	    return this;

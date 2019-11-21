@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The details for the merchant who receives the funds and fulfills the order. The merchant is also known as the payee.
  */
@@ -27,7 +27,7 @@ public class PayeeBase {
 	private String clientId;
 
 	public String clientId() { return clientId; }
-	
+
 	public PayeeBase clientId(String clientId) {
 	    this.clientId = clientId;
 	    return this;
@@ -40,7 +40,7 @@ public class PayeeBase {
 	private String email;
 
 	public String email() { return email; }
-	
+
 	public PayeeBase email(String email) {
 	    this.email = email;
 	    return this;
@@ -53,7 +53,7 @@ public class PayeeBase {
 	private String merchantId;
 
 	public String merchantId() { return merchantId; }
-	
+
 	public PayeeBase merchantId(String merchantId) {
 	    this.merchantId = merchantId;
 	    return this;

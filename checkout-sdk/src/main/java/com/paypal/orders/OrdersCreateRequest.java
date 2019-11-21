@@ -6,7 +6,7 @@
 // DO NOT EDIT
 package com.paypal.orders;
 
-import com.braintreepayments.http.*;
+import com.paypal.http.*;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.io.UnsupportedEncodingException;
@@ -18,30 +18,30 @@ public class OrdersCreateRequest extends HttpRequest<Order> {
 
     public OrdersCreateRequest() {
         super("/v2/checkout/orders?", "POST", Order.class);
-        
+
         header("Content-Type", "application/json");
     }
     public OrdersCreateRequest authorization(String authorization) {
         header("Authorization", String.valueOf(authorization));
         return this;
     }
-    
+
     public OrdersCreateRequest contentType(String contentType) {
         header("Content-Type", String.valueOf(contentType));
         return this;
     }
-    
+
     public OrdersCreateRequest payPalPartnerAttributionId(String payPalPartnerAttributionId) {
         header("PayPal-Partner-Attribution-Id", String.valueOf(payPalPartnerAttributionId));
         return this;
     }
-    
+
     public OrdersCreateRequest prefer(String prefer) {
         header("Prefer", String.valueOf(prefer));
         return this;
     }
-    
-    
+
+
 
     public OrdersCreateRequest requestBody(OrderRequest order) {
         super.requestBody(order);

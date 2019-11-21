@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The exchange rate that determines the amount to convert from one currency to another currency.
  */
@@ -27,7 +27,7 @@ public class ExchangeRate {
 	private String sourceCurrency;
 
 	public String sourceCurrency() { return sourceCurrency; }
-	
+
 	public ExchangeRate sourceCurrency(String sourceCurrency) {
 	    this.sourceCurrency = sourceCurrency;
 	    return this;
@@ -40,7 +40,7 @@ public class ExchangeRate {
 	private String targetCurrency;
 
 	public String targetCurrency() { return targetCurrency; }
-	
+
 	public ExchangeRate targetCurrency(String targetCurrency) {
 	    this.targetCurrency = targetCurrency;
 	    return this;
@@ -53,7 +53,7 @@ public class ExchangeRate {
 	private String value;
 
 	public String value() { return value; }
-	
+
 	public ExchangeRate value(String value) {
 	    this.value = value;
 	    return this;

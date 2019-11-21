@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * Captures either a portion or the full authorized amount of an authorized payment.
  */
@@ -27,7 +27,7 @@ public class CaptureRequest {
 	private Money amount;
 
 	public Money amount() { return amount; }
-	
+
 	public CaptureRequest amount(Money amount) {
 	    this.amount = amount;
 	    return this;
@@ -40,7 +40,7 @@ public class CaptureRequest {
 	private Boolean finalCapture;
 
 	public Boolean finalCapture() { return finalCapture; }
-	
+
 	public CaptureRequest finalCapture(Boolean finalCapture) {
 	    this.finalCapture = finalCapture;
 	    return this;
@@ -53,7 +53,7 @@ public class CaptureRequest {
 	private String invoiceId;
 
 	public String invoiceId() { return invoiceId; }
-	
+
 	public CaptureRequest invoiceId(String invoiceId) {
 	    this.invoiceId = invoiceId;
 	    return this;
@@ -66,7 +66,7 @@ public class CaptureRequest {
 	private PaymentInstruction paymentInstruction;
 
 	public PaymentInstruction paymentInstruction() { return paymentInstruction; }
-	
+
 	public CaptureRequest paymentInstruction(PaymentInstruction paymentInstruction) {
 	    this.paymentInstruction = paymentInstruction;
 	    return this;

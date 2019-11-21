@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * Completes an capture payment for an order.
  */
@@ -27,7 +27,7 @@ public class OrderCaptureRequest {
 	private PaymentSource paymentSource;
 
 	public PaymentSource paymentSource() { return paymentSource; }
-	
+
 	public OrderCaptureRequest paymentSource(PaymentSource paymentSource) {
 	    this.paymentSource = paymentSource;
 	    return this;

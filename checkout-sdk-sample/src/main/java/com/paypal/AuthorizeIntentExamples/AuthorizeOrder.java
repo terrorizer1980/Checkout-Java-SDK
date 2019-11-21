@@ -5,8 +5,8 @@ import java.io.IOException;
 import com.paypal.orders.*;
 import org.json.JSONObject;
 
-import com.braintreepayments.http.HttpResponse;
-import com.braintreepayments.http.serializer.Json;
+import com.paypal.http.HttpResponse;
+import com.paypal.http.serializer.Json;
 import com.paypal.PayPalClient;
 
 public class AuthorizeOrder extends PayPalClient {
