@@ -1,8 +1,8 @@
 package com.paypal.payments;
 
-import com.braintreepayments.http.HttpResponse;
-import com.braintreepayments.http.HttpClient;
-import com.braintreepayments.http.serializer.Json;
+import com.paypal.http.HttpResponse;
+import com.paypal.http.HttpClient;
+import com.paypal.http.serializer.Json;
 import com.paypal.TestHarness;
 import java.io.File;
 import java.nio.file.Paths;

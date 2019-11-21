@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The authorized payment transaction.
  */
@@ -27,7 +27,7 @@ public class Authorization {
 	private Money amount;
 
 	public Money amount() { return amount; }
-	
+
 	public Authorization amount(Money amount) {
 	    this.amount = amount;
 	    return this;
@@ -40,7 +40,7 @@ public class Authorization {
 	private String createTime;
 
 	public String createTime() { return createTime; }
-	
+
 	public Authorization createTime(String createTime) {
 	    this.createTime = createTime;
 	    return this;
@@ -53,7 +53,7 @@ public class Authorization {
 	private String expirationTime;
 
 	public String expirationTime() { return expirationTime; }
-	
+
 	public Authorization expirationTime(String expirationTime) {
 	    this.expirationTime = expirationTime;
 	    return this;
@@ -66,7 +66,7 @@ public class Authorization {
 	private String id;
 
 	public String id() { return id; }
-	
+
 	public Authorization id(String id) {
 	    this.id = id;
 	    return this;
@@ -79,7 +79,7 @@ public class Authorization {
 	private String invoiceId;
 
 	public String invoiceId() { return invoiceId; }
-	
+
 	public Authorization invoiceId(String invoiceId) {
 	    this.invoiceId = invoiceId;
 	    return this;
@@ -92,7 +92,7 @@ public class Authorization {
 	private List<LinkDescription> links;
 
 	public List<LinkDescription> links() { return links; }
-	
+
 	public Authorization links(List<LinkDescription> links) {
 	    this.links = links;
 	    return this;
@@ -105,7 +105,7 @@ public class Authorization {
 	private SellerProtection sellerProtection;
 
 	public SellerProtection sellerProtection() { return sellerProtection; }
-	
+
 	public Authorization sellerProtection(SellerProtection sellerProtection) {
 	    this.sellerProtection = sellerProtection;
 	    return this;
@@ -118,7 +118,7 @@ public class Authorization {
 	private String status;
 
 	public String status() { return status; }
-	
+
 	public Authorization status(String status) {
 	    this.status = status;
 	    return this;
@@ -131,7 +131,7 @@ public class Authorization {
 	private String updateTime;
 
 	public String updateTime() { return updateTime; }
-	
+
 	public Authorization updateTime(String updateTime) {
 	    this.updateTime = updateTime;
 	    return this;

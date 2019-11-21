@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The tax ID of the customer. The customer is also known as the payer. Both `tax_id` and `tax_id_type` are required.
  */
@@ -28,7 +28,7 @@ public class TaxInfo {
 	private String taxId;
 
 	public String taxId() { return taxId; }
-	
+
 	public TaxInfo taxId(String taxId) {
 	    this.taxId = taxId;
 	    return this;
@@ -42,7 +42,7 @@ public class TaxInfo {
 	private String taxIdType;
 
 	public String taxIdType() { return taxIdType; }
-	
+
 	public TaxInfo taxIdType(String taxIdType) {
 	    this.taxIdType = taxIdType;
 	    return this;

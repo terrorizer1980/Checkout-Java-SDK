@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The level of protection offered as defined by [PayPal Seller Protection for Merchants](https://www.paypal.com/us/webapps/mpp/security/seller-protection).
  */
@@ -27,7 +27,7 @@ public class SellerProtection {
 	private List<String> disputeCategories;
 
 	public List<String> disputeCategories() { return disputeCategories; }
-	
+
 	public SellerProtection disputeCategories(List<String> disputeCategories) {
 	    this.disputeCategories = disputeCategories;
 	    return this;
@@ -40,7 +40,7 @@ public class SellerProtection {
 	private String status;
 
 	public String status() { return status; }
-	
+
 	public SellerProtection status(String status) {
 	    this.status = status;
 	    return this;

@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The order details.
  */
@@ -27,7 +27,7 @@ public class Order {
 	private String checkoutPaymentIntent;
 
 	public String checkoutPaymentIntent() { return checkoutPaymentIntent; }
-	
+
 	public Order checkoutPaymentIntent(String checkoutPaymentIntent) {
 	    this.checkoutPaymentIntent = checkoutPaymentIntent;
 	    return this;
@@ -40,7 +40,7 @@ public class Order {
 	private String createTime;
 
 	public String createTime() { return createTime; }
-	
+
 	public Order createTime(String createTime) {
 	    this.createTime = createTime;
 	    return this;
@@ -53,7 +53,7 @@ public class Order {
 	private String expirationTime;
 
 	public String expirationTime() { return expirationTime; }
-	
+
 	public Order expirationTime(String expirationTime) {
 	    this.expirationTime = expirationTime;
 	    return this;
@@ -66,7 +66,7 @@ public class Order {
 	private String id;
 
 	public String id() { return id; }
-	
+
 	public Order id(String id) {
 	    this.id = id;
 	    return this;
@@ -79,7 +79,7 @@ public class Order {
 	private List<LinkDescription> links;
 
 	public List<LinkDescription> links() { return links; }
-	
+
 	public Order links(List<LinkDescription> links) {
 	    this.links = links;
 	    return this;
@@ -92,7 +92,7 @@ public class Order {
 	private Payer payer;
 
 	public Payer payer() { return payer; }
-	
+
 	public Order payer(Payer payer) {
 	    this.payer = payer;
 	    return this;
@@ -105,7 +105,7 @@ public class Order {
 	private List<PurchaseUnit> purchaseUnits;
 
 	public List<PurchaseUnit> purchaseUnits() { return purchaseUnits; }
-	
+
 	public Order purchaseUnits(List<PurchaseUnit> purchaseUnits) {
 	    this.purchaseUnits = purchaseUnits;
 	    return this;
@@ -118,7 +118,7 @@ public class Order {
 	private String status;
 
 	public String status() { return status; }
-	
+
 	public Order status(String status) {
 	    this.status = status;
 	    return this;
@@ -131,7 +131,7 @@ public class Order {
 	private String updateTime;
 
 	public String updateTime() { return updateTime; }
-	
+
 	public Order updateTime(String updateTime) {
 	    this.updateTime = updateTime;
 	    return this;

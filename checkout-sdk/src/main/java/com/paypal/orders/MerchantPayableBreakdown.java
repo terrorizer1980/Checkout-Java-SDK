@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The breakdown of the refund.
  */
@@ -27,7 +27,7 @@ public class MerchantPayableBreakdown {
 	private Money grossAmount;
 
 	public Money grossAmount() { return grossAmount; }
-	
+
 	public MerchantPayableBreakdown grossAmount(Money grossAmount) {
 	    this.grossAmount = grossAmount;
 	    return this;
@@ -40,7 +40,7 @@ public class MerchantPayableBreakdown {
 	private Money netAmount;
 
 	public Money netAmount() { return netAmount; }
-	
+
 	public MerchantPayableBreakdown netAmount(Money netAmount) {
 	    this.netAmount = netAmount;
 	    return this;
@@ -53,7 +53,7 @@ public class MerchantPayableBreakdown {
 	private List<NetAmountBreakdownItem> netAmountBreakdown;
 
 	public List<NetAmountBreakdownItem> netAmountBreakdown() { return netAmountBreakdown; }
-	
+
 	public MerchantPayableBreakdown netAmountBreakdown(List<NetAmountBreakdownItem> netAmountBreakdown) {
 	    this.netAmountBreakdown = netAmountBreakdown;
 	    return this;
@@ -66,7 +66,7 @@ public class MerchantPayableBreakdown {
 	private Money paypalFee;
 
 	public Money paypalFee() { return paypalFee; }
-	
+
 	public MerchantPayableBreakdown paypalFee(Money paypalFee) {
 	    this.paypalFee = paypalFee;
 	    return this;
@@ -79,7 +79,7 @@ public class MerchantPayableBreakdown {
 	private List<PlatformFee> platformFees;
 
 	public List<PlatformFee> platformFees() { return platformFees; }
-	
+
 	public MerchantPayableBreakdown platformFees(List<PlatformFee> platformFees) {
 	    this.platformFees = platformFees;
 	    return this;
@@ -92,7 +92,7 @@ public class MerchantPayableBreakdown {
 	private Money totalRefundedAmount;
 
 	public Money totalRefundedAmount() { return totalRefundedAmount; }
-	
+
 	public MerchantPayableBreakdown totalRefundedAmount(Money totalRefundedAmount) {
 	    this.totalRefundedAmount = totalRefundedAmount;
 	    return this;

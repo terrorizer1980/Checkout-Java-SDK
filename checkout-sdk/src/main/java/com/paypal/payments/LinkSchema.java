@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The request data or link target.
  */
@@ -26,7 +26,7 @@ public class LinkSchema {
 	private Object additionalItems;
 
 	public Object additionalItems() { return additionalItems; }
-	
+
 	public LinkSchema additionalItems(Object additionalItems) {
 	    this.additionalItems = additionalItems;
 	    return this;
@@ -64,7 +64,7 @@ public class LinkSchema {
 	private Object definitions;
 
 	public Object definitions() { return definitions; }
-	
+
 	public LinkSchema definitions(Object definitions) {
 	    this.definitions = definitions;
 	    return this;
@@ -76,7 +76,7 @@ public class LinkSchema {
 	private Object dependencies;
 
 	public Object dependencies() { return dependencies; }
-	
+
 	public LinkSchema dependencies(Object dependencies) {
 	    this.dependencies = dependencies;
 	    return this;
@@ -88,7 +88,7 @@ public class LinkSchema {
 	private String fragmentResolution;
 
 	public String fragmentResolution() { return fragmentResolution; }
-	
+
 	public LinkSchema fragmentResolution(String fragmentResolution) {
 	    this.fragmentResolution = fragmentResolution;
 	    return this;
@@ -101,7 +101,7 @@ public class LinkSchema {
 	private Object items;
 
 	public Object items() { return items; }
-	
+
 	public LinkSchema items(Object items) {
 	    this.items = items;
 	    return this;
@@ -126,7 +126,7 @@ public class LinkSchema {
 	private Object not;
 
 	public Object not() { return not; }
-	
+
 	public LinkSchema not(Object not) {
 	    this.not = not;
 	    return this;
@@ -152,7 +152,7 @@ public class LinkSchema {
 	private String pathStart;
 
 	public String pathStart() { return pathStart; }
-	
+
 	public LinkSchema pathStart(String pathStart) {
 	    this.pathStart = pathStart;
 	    return this;
@@ -164,7 +164,7 @@ public class LinkSchema {
 	private Object patternProperties;
 
 	public Object patternProperties() { return patternProperties; }
-	
+
 	public LinkSchema patternProperties(Object patternProperties) {
 	    this.patternProperties = patternProperties;
 	    return this;
@@ -176,7 +176,7 @@ public class LinkSchema {
 	private Object properties;
 
 	public Object properties() { return properties; }
-	
+
 	public LinkSchema properties(Object properties) {
 	    this.properties = properties;
 	    return this;

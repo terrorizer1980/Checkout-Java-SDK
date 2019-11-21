@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * Refunds a captured payment, by ID. For a full refund, include an empty JSON request body. For a partial refund, include an <code>amount</code> object in the JSON request body.
  */
@@ -28,7 +28,7 @@ public class RefundRequest {
 	private Money amount;
 
 	public Money amount() { return amount; }
-	
+
 	public RefundRequest amount(Money amount) {
 	    this.amount = amount;
 	    return this;
@@ -41,7 +41,7 @@ public class RefundRequest {
 	private String invoiceId;
 
 	public String invoiceId() { return invoiceId; }
-	
+
 	public RefundRequest invoiceId(String invoiceId) {
 	    this.invoiceId = invoiceId;
 	    return this;
@@ -54,7 +54,7 @@ public class RefundRequest {
 	private String noteToPayer;
 
 	public String noteToPayer() { return noteToPayer; }
-	
+
 	public RefundRequest noteToPayer(String noteToPayer) {
 	    this.noteToPayer = noteToPayer;
 	    return this;

@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The details for the items to be purchased.
  */
@@ -27,7 +27,7 @@ public class Item {
 	private String category;
 
 	public String category() { return category; }
-	
+
 	public Item category(String category) {
 	    this.category = category;
 	    return this;
@@ -40,7 +40,7 @@ public class Item {
 	private String description;
 
 	public String description() { return description; }
-	
+
 	public Item description(String description) {
 	    this.description = description;
 	    return this;
@@ -54,7 +54,7 @@ public class Item {
 	private String name;
 
 	public String name() { return name; }
-	
+
 	public Item name(String name) {
 	    this.name = name;
 	    return this;
@@ -68,7 +68,7 @@ public class Item {
 	private String quantity;
 
 	public String quantity() { return quantity; }
-	
+
 	public Item quantity(String quantity) {
 	    this.quantity = quantity;
 	    return this;
@@ -81,7 +81,7 @@ public class Item {
 	private String sku;
 
 	public String sku() { return sku; }
-	
+
 	public Item sku(String sku) {
 	    this.sku = sku;
 	    return this;
@@ -94,7 +94,7 @@ public class Item {
 	private Money tax;
 
 	public Money tax() { return tax; }
-	
+
 	public Item tax(Money tax) {
 	    this.tax = tax;
 	    return this;
@@ -108,7 +108,7 @@ public class Item {
 	private Money unitAmount;
 
 	public Money unitAmount() { return unitAmount; }
-	
+
 	public Item unitAmount(Money unitAmount) {
 	    this.unitAmount = unitAmount;
 	    return this;

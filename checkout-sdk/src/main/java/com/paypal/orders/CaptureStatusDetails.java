@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The details of the captured payment status.
  */
@@ -27,7 +27,7 @@ public class CaptureStatusDetails {
 	private String reason;
 
 	public String reason() { return reason; }
-	
+
 	public CaptureStatusDetails reason(String reason) {
 	    this.reason = reason;
 	    return this;

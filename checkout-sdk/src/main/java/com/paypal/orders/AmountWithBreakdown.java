@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The total order amount with an optional breakdown that provides details, such as the total item amount, total tax amount, shipping, handling, insurance, and discounts, if any.<br/>If you specify `amount.breakdown`, the amount equals `item_total` plus `tax_total` plus `shipping` plus `handling` plus `insurance` minus `shipping_discount` minus discount.<br/>The amount must be a positive number. For listed of supported currencies and decimal precision, see the PayPal REST APIs <a href="/docs/integration/direct/rest/currency-codes/">Currency Codes</a>.
  */
@@ -27,7 +27,7 @@ public class AmountWithBreakdown {
 	private AmountBreakdown amountBreakdown;
 
 	public AmountBreakdown amountBreakdown() { return amountBreakdown; }
-	
+
 	public AmountWithBreakdown amountBreakdown(AmountBreakdown amountBreakdown) {
 	    this.amountBreakdown = amountBreakdown;
 	    return this;
@@ -41,7 +41,7 @@ public class AmountWithBreakdown {
 	private String currencyCode;
 
 	public String currencyCode() { return currencyCode; }
-	
+
 	public AmountWithBreakdown currencyCode(String currencyCode) {
 	    this.currencyCode = currencyCode;
 	    return this;
@@ -55,7 +55,7 @@ public class AmountWithBreakdown {
 	private String value;
 
 	public String value() { return value; }
-	
+
 	public AmountWithBreakdown value(String value) {
 	    this.value = value;
 	    return this;

@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.json.JSONObject;
 
-import com.braintreepayments.http.HttpResponse;
-import com.braintreepayments.http.serializer.Json;
+import com.paypal.http.HttpResponse;
+import com.paypal.http.serializer.Json;
 import com.paypal.AuthorizeIntentExamples.CreateOrder;
 import com.paypal.orders.AmountBreakdown;
 import com.paypal.orders.AmountWithBreakdown;
@@ -21,7 +21,7 @@ import com.paypal.orders.Patch;
 public class PatchOrder extends PayPalClient {
 	/**
 	 * Method to created body for patch order
-	 * 
+	 *
 	 * @return List<Patch> list of patches to be made
 	 * @throws IOException
 	 */
@@ -37,7 +37,7 @@ public class PatchOrder extends PayPalClient {
 
 	/**
 	 * Method to patch order
-	 * 
+	 *
 	 * @throws IOException Exceptions from API if any
 	 */
 	public void patchOrder(String orderId) throws IOException {

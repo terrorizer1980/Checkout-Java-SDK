@@ -6,7 +6,7 @@
 // DO NOT EDIT
 package com.paypal.payments;
 
-import com.braintreepayments.http.*;
+import com.paypal.http.*;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.io.UnsupportedEncodingException;
@@ -21,21 +21,21 @@ public class AuthorizationsCaptureRequest extends HttpRequest<Capture> {
         try {
             path(path().replace("{authorization_id}", URLEncoder.encode(String.valueOf(authorizationId), "UTF-8")));
         } catch (UnsupportedEncodingException ignored) {}
-        
+
         header("Content-Type", "application/json");
     }
-    
+
     public AuthorizationsCaptureRequest payPalRequestId(String payPalRequestId) {
         header("PayPal-Request-Id", String.valueOf(payPalRequestId));
         return this;
     }
-    
+
     public AuthorizationsCaptureRequest prefer(String prefer) {
         header("Prefer", String.valueOf(prefer));
         return this;
     }
-    
-    
+
+
 
     public AuthorizationsCaptureRequest requestBody(CaptureRequest capture) {
         super.requestBody(capture);

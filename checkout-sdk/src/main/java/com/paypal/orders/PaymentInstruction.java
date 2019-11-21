@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * Any additional payment instructions for PayPal for Partner customers. Enables features for partners and marketplaces, such as delayed disbursement and collection of a platform fee. Applies during order creation for captured payments or during capture of authorized payments.
  */
@@ -27,7 +27,7 @@ public class PaymentInstruction {
 	private String disbursementMode;
 
 	public String disbursementMode() { return disbursementMode; }
-	
+
 	public PaymentInstruction disbursementMode(String disbursementMode) {
 	    this.disbursementMode = disbursementMode;
 	    return this;
@@ -40,7 +40,7 @@ public class PaymentInstruction {
 	private List<PlatformFee> platformFees;
 
 	public List<PlatformFee> platformFees() { return platformFees; }
-	
+
 	public PaymentInstruction platformFees(List<PlatformFee> platformFees) {
 	    this.platformFees = platformFees;
 	    return this;

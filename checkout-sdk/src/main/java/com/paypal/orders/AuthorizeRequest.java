@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The authorize an order request.
  */
@@ -27,7 +27,7 @@ public class AuthorizeRequest {
 	private Money amount;
 
 	public Money amount() { return amount; }
-	
+
 	public AuthorizeRequest amount(Money amount) {
 	    this.amount = amount;
 	    return this;
@@ -40,7 +40,7 @@ public class AuthorizeRequest {
 	private PaymentSource paymentSource;
 
 	public PaymentSource paymentSource() { return paymentSource; }
-	
+
 	public AuthorizeRequest paymentSource(PaymentSource paymentSource) {
 	    this.paymentSource = paymentSource;
 	    return this;
@@ -53,7 +53,7 @@ public class AuthorizeRequest {
 	private String referenceId;
 
 	public String referenceId() { return referenceId; }
-	
+
 	public AuthorizeRequest referenceId(String referenceId) {
 	    this.referenceId = referenceId;
 	    return this;

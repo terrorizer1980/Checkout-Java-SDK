@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The merchant information. The merchant is also known as the payee. Appears to the customer in checkout, transactions, email receipts, and transaction history.
  */
@@ -27,7 +27,7 @@ public class PayeeDisplayable {
 	private String brandName;
 
 	public String brandName() { return brandName; }
-	
+
 	public PayeeDisplayable brandName(String brandName) {
 	    this.brandName = brandName;
 	    return this;
@@ -40,7 +40,7 @@ public class PayeeDisplayable {
 	private Phone businessPhone;
 
 	public Phone businessPhone() { return businessPhone; }
-	
+
 	public PayeeDisplayable businessPhone(Phone businessPhone) {
 	    this.businessPhone = businessPhone;
 	    return this;
@@ -53,7 +53,7 @@ public class PayeeDisplayable {
 	private String email;
 
 	public String email() { return email; }
-	
+
 	public PayeeDisplayable email(String email) {
 	    this.email = email;
 	    return this;

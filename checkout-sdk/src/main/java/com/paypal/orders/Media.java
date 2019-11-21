@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import com.braintreepayments.http.annotations.*;
+import com.paypal.http.annotations.*;
 /**
  * The media type and context-encoding scheme.
  */
@@ -27,7 +27,7 @@ public class Media {
 	private String binaryEncoding;
 
 	public String binaryEncoding() { return binaryEncoding; }
-	
+
 	public Media binaryEncoding(String binaryEncoding) {
 	    this.binaryEncoding = binaryEncoding;
 	    return this;
@@ -40,7 +40,7 @@ public class Media {
 	private String type;
 
 	public String type() { return type; }
-	
+
 	public Media type(String type) {
 	    this.type = type;
 	    return this;

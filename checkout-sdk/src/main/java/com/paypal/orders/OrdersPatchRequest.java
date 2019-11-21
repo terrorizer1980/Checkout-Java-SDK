@@ -6,7 +6,7 @@
 // DO NOT EDIT
 package com.paypal.orders;
 
-import com.braintreepayments.http.*;
+import com.paypal.http.*;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.io.UnsupportedEncodingException;
@@ -21,20 +21,20 @@ public class OrdersPatchRequest extends HttpRequest<Void> {
         try {
             path(path().replace("{order_id}", URLEncoder.encode(String.valueOf(orderId), "UTF-8")));
         } catch (UnsupportedEncodingException ignored) {}
-        
+
         header("Content-Type", "application/json");
     }
     public OrdersPatchRequest authorization(String authorization) {
         header("Authorization", String.valueOf(authorization));
         return this;
     }
-    
+
     public OrdersPatchRequest contentType(String contentType) {
         header("Content-Type", String.valueOf(contentType));
         return this;
     }
-    
-    
+
+
 
     public OrdersPatchRequest requestBody(List<Patch> patchRequest) {
         super.requestBody(patchRequest);

@@ -30,7 +30,7 @@ public class PayPalClient {
 
 	/**
 	 * Method to get client object
-	 * 
+	 *
 	 * @return PayPalHttpClient client
 	 */
 	public PayPalHttpClient client() {
@@ -39,7 +39,7 @@ public class PayPalClient {
 
 	/**
 	 * Method to pretty print a response
-	 * 
+	 *
 	 * @param jo  JSONObject
 	 * @param pre prefix (default="")
 	 * @return String pretty printed JSON

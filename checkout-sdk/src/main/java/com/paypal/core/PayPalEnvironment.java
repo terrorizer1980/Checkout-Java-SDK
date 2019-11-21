@@ -1,6 +1,6 @@
 package com.paypal.core;
 
-import com.braintreepayments.http.Environment;
+import com.paypal.http.Environment;
 
 import java.util.Base64;
 

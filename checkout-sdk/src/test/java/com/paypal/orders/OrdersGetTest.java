@@ -1,8 +1,8 @@
 package com.paypal.orders;
 
-import com.braintreepayments.http.HttpResponse;
-import com.braintreepayments.http.HttpClient;
-import com.braintreepayments.http.serializer.Json;
+import com.paypal.http.HttpResponse;
+import com.paypal.http.HttpClient;
+import com.paypal.http.serializer.Json;
 import com.paypal.TestHarness;
 import java.io.File;
 import java.nio.file.Paths;
@@ -20,7 +20,7 @@ public class OrdersGetTest extends TestHarness {
     @Test
     public void testOrdersGetRequest() throws IOException {
         Order order = OrdersCreateTest.createOrder(client());
-        
+
         OrdersGetRequest request = new OrdersGetRequest(order.id());
 
         HttpResponse<Order> response = client().execute(request);
