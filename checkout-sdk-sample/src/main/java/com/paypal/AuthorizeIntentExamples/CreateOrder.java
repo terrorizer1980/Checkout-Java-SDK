@@ -87,7 +87,6 @@ public class CreateOrder extends PayPalClient {
 		request.header("prefer","return=representation");
 		request.requestBody(buildCompleteRequestBody());
 		HttpResponse<Order> response = client().execute(request);
-		System.out.println(response.headers().header("paypal-Debug-Id"));
 		if (debug) {
 			if (response.statusCode() == 201) {
 				System.out.println("Order with Complete Payload: ");
